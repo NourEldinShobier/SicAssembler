@@ -19,7 +19,7 @@ public abstract class InstructionIdentifier
 
     private static Instruction identifyLabel(Instruction instruction){
         String label = instruction.segments[0];
-
+        //if there's no label, then return instruction
         if (label.equals("")) return instruction;
 
         return null;

@@ -1,3 +1,4 @@
+import core.FileManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import utils.Instruction.Instruction;
@@ -17,7 +18,9 @@ public class Main extends Application
 
     public static void main(String[] args)
     {
-        List<String> lines = new ArrayList<>();
+        //List<String> lines = new ArrayList<>();
+        //lines = FileManager.readFile();
+        List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
 
         lines.forEach((String line)->{
