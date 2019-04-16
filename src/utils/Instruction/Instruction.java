@@ -2,13 +2,11 @@ package utils.Instruction;
 
 public class Instruction
 {
-    int line;
+    public String memoryLocation;
+    public String opCode;
 
-    String memoryLocation;
-    String opCode;
+    public Mnemonic mnemonic;
 
-    String label;
-    Mnemonic mnemonic;
-
-    int[] paramters = new int[2];
+    public String[] segments;
+    public String[] operands;
 }

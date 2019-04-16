@@ -4,6 +4,7 @@ public class Mnemonic
 {
     String name;
     String opCode;
+    String nixbpe;
 
     MnemonicFormat format;
 

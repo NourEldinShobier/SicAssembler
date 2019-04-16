@@ -1,14 +1,14 @@
 package core;
 
-public enum Registers
+public class Registers
 {
-    A,
-    B,
-    S,
-    T,
-    F,
-    X,
-    L,
-    PC,
-    SW,
+    String A = "0000";
+    String B = "0010";
+    String S;
+    String T;
+    String F;
+    String X;
+    String L;
+    String PC;
+    String SW;
 }

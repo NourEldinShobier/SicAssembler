@@ -1,6 +1,6 @@
 package utils;
 
 
-public class FormatIdentifier
+public abstract class FormatIdentifier
 {
 }
