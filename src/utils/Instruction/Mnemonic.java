@@ -2,16 +2,15 @@ package utils.Instruction;
 
 public class Mnemonic
 {
-    String name;
-    String opCode;
-    String nixbpe;
+    public String name;
+    public String opCode;
+    public String nixbpe;
 
-    MnemonicFormat format;
+    public MnemonicFormat format;
 
-    public Mnemonic(String name, String opCode, MnemonicFormat format)
+    public Mnemonic(String name, String opCode)
     {
         this.name = name;
         this.opCode = opCode;
-        this.format = format;
     }
 }

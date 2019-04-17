@@ -9,4 +9,7 @@ public class Instruction
 
     public String[] segments;
     public String[] operands;
+
+    public boolean isStartEnd = false;
+    public boolean isDirective = false;
 }

@@ -2,5 +2,5 @@ package core;
 
 public abstract class LookupTables
 {
-    static String symbolTable[] = {""};
+    public static String[] symbolTable;
 }
