@@ -98,7 +98,7 @@ public abstract class InstructionIdentifier
         return length;
     }
     private static int diagnoseWORD(String operand)
-    { int length = 0;
+    { int length = 1;
 
       if(operand.contains(",")){
        int i = 0,CommaCount = 0;
