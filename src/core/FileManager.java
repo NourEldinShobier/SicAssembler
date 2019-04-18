@@ -1,33 +1,25 @@
 package core;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public abstract class FileManager
 {
     public static ArrayList<String> readFile()
     {
-        BufferedReader input;
+        Scanner scan;
+        ArrayList<String> lines = new ArrayList<>();
+
         try {
-            input = new BufferedReader(new FileReader("C:\\srcFile.txt"));
-            String line = input.readLine();
-            ArrayList<String> lines = new ArrayList<>();
-
-            while (line != null) {
-                System.out.println(line);
-                line = input.readLine();
-                lines.add(line);
-            }
-
-            input.close();
-            return lines;
+            scan = new Scanner(new File("C:\\SICAssembler\\srcFile.txt"));
+            while (scan.hasNextLine()) lines.add(scan.nextLine());
         }
-        catch (IOException e) {
+        catch (FileNotFoundException e) {
             e.printStackTrace();
-            return null;
         }
+
+        return lines;
     }
 }

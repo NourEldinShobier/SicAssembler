@@ -32,5 +32,12 @@ public class Main extends Application
         });
 
         InstructionManager.generateListFile(instructions);
+
+        // For testing
+        instructions.forEach((instruction)->{
+            if (instruction.mnemonic.format == MnemonicFormat.TWO) System.out.println("TWO");
+            if (instruction.mnemonic.format == MnemonicFormat.THREE) System.out.println("THREE");
+            if (instruction.mnemonic.format == MnemonicFormat.FOUR) System.out.println("FOUR");
+        });
     }
 }
