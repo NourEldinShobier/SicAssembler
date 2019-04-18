@@ -45,7 +45,12 @@ public abstract class InstructionIdentifier
 
             if (instruction.segments[1].equals("BYTE"))
                 length = diagnoseBYTE(instruction.segments[2]);
-
+            else if (instruction.segments[1].equals("ResB"))
+                length = Integer.parseInt(instruction.segments[2]);
+            else if (instruction.segments[1].equals("ResW"))
+                length = 3*Integer.parseInt(instruction.segments[2]);
+            else if (instruction.segments[1].equals("WORD"))
+               length = diagnoseWORD(instruction.segments[2]);
 
             instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
@@ -91,5 +96,25 @@ public abstract class InstructionIdentifier
         }
 
         return length;
+    }
+    private static int diagnoseWORD(String operand)
+    { int length = 0;
+
+      if(operand.contains(",")){
+       int i = 0,CommaCount = 0;
+
+       while(i < operand.length()){
+
+           if(operand.charAt(i) == ','){
+               CommaCount++;
+           }
+
+           i++;
+       }
+       length = CommaCount +1;
+     }
+
+
+     return 3*length;
     }
 }
