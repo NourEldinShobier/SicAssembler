@@ -30,8 +30,7 @@ public abstract class InstructionIdentifier
 
         if (label.equals("")) return instruction;
 
-        // CONVERT PC TO HEX
-        LookupTables.symbolTable.put(label, Integer.toString(PC));
+        LookupTables.symbolTable.put(label, Integer.toHexString(PC));
 
         return instruction;
     }
@@ -43,9 +42,12 @@ public abstract class InstructionIdentifier
         if (instruction.isStartEnd) initPC(instruction);
 
         else if (instruction.isDirective) {
-            //HERE
+
+            if (instruction.segments[1].equals("BYTE"))
+                length = diagnoseBYTE(instruction.segments[2]);
 
 
+            instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
         }
         else {
@@ -53,9 +55,10 @@ public abstract class InstructionIdentifier
             if (instruction.mnemonic.format == MnemonicFormat.THREE) length = 3;
             if (instruction.mnemonic.format == MnemonicFormat.FOUR) length = 4;
 
-            // CONVERT PC TO HEX
-            instruction.memoryLocation = Integer.toString(PC);
+            instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
+
+            // PASS 2 - CODE
         }
 
         return instruction;
@@ -70,6 +73,23 @@ public abstract class InstructionIdentifier
     private static void initPC(Instruction instruction)
     {
         if (instruction.segments[1].equals("START"))
-            PC = Integer.parseInt(instruction.segments[2]);
+            PC = Integer.parseInt(instruction.segments[2], 16);
+    }
+
+    private static int diagnoseBYTE(String operand)
+    {
+        int length = 0;
+
+        if (operand.startsWith("C")) {
+            String data = operand.substring(2, operand.length() - 1);
+            length = data.length();
+        }
+
+        else if (operand.startsWith("X")) {
+            String data = operand.substring(2, operand.length() - 1);
+            length = data.length() / 2;
+        }
+
+        return length;
     }
 }

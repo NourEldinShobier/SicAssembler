@@ -21,7 +21,7 @@ public class Main extends Application
 
     public static void main(String[] args)
     {
-        List<String> lines = FileManager.readFile();
+        /*List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
 
         assert lines != null;
@@ -38,6 +38,18 @@ public class Main extends Application
             if (instruction.mnemonic.format == MnemonicFormat.TWO) System.out.println("TWO");
             if (instruction.mnemonic.format == MnemonicFormat.THREE) System.out.println("THREE");
             if (instruction.mnemonic.format == MnemonicFormat.FOUR) System.out.println("FOUR");
-        });
+        });*/
+
+
+        String[] segments = "HELLO    BYTE    X'ABC'".split("\\s+");
+
+        if (segments[2].startsWith("C")) {
+            System.out.println("C");
+            System.out.println(segments[2].substring(2, segments[2].length() - 1));
+        }
+        if (segments[2].startsWith("X")) {
+            System.out.println("X");
+            System.out.println(segments[2].substring(2, segments[2].length() - 1));
+        }
     }
 }
