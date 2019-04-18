@@ -2,6 +2,7 @@ import core.FileManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import utils.Instruction.Instruction;
+import utils.Instruction.MnemonicFormat;
 import utils.InstructionIdentifier;
 import utils.InstructionManager;
 

@@ -9,7 +9,8 @@ abstract class FormatIdentifier
     static Instruction identify(Instruction instruction)
     {
         if (isStartEnd(instruction)) instruction.isStartEnd = true;
-        if (isDirective(instruction)) instruction.isDirective = false;
+        if (isDirective(instruction)) instruction.isDirective = true;
+
 
         if (!instruction.isDirective && !instruction.isStartEnd)
             instruction = diagnoseFormat(instruction);
@@ -33,10 +34,7 @@ abstract class FormatIdentifier
 
     private static Instruction diagnoseFormat(Instruction instruction)
     {
-        if (instruction.segments[2].equals(""))
-            instruction.mnemonic.format = MnemonicFormat.ONE;
-
-        else if (instruction.segments[2].contains(","))
+        if (instruction.segments[2].contains(","))
             instruction.mnemonic.format = MnemonicFormat.TWO;
 
         else if (instruction.segments[1].startsWith("+"))

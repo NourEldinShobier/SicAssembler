@@ -6,7 +6,7 @@ public class Mnemonic
     public String opCode;
     public String nixbpe;
 
-    public MnemonicFormat format;
+    public MnemonicFormat format = MnemonicFormat.NA;
 
     public Mnemonic(String name, String opCode)
     {

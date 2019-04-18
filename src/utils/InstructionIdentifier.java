@@ -45,7 +45,6 @@ public abstract class InstructionIdentifier
             PC += length;
         }
         else {
-            if (instruction.mnemonic.format == MnemonicFormat.ONE) length = 8;
             if (instruction.mnemonic.format == MnemonicFormat.TWO) length = 16;
             if (instruction.mnemonic.format == MnemonicFormat.THREE) length = 24;
             if (instruction.mnemonic.format == MnemonicFormat.FOUR) length = 32;
