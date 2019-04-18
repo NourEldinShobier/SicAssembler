@@ -26,7 +26,7 @@ public class Main extends Application
 
         assert lines != null;
 
-        lines.forEach((String line)->{
+        lines.forEach((line)->{
             Instruction instruction = InstructionIdentifier.identify(line);
             instructions.add(instruction);
         });

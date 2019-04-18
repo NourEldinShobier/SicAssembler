@@ -1,6 +1,9 @@
 package core;
 
+import java.util.HashMap;
+
 public abstract class LookupTables
 {
-    public static String[] symbolTable;
+    public static HashMap<String, String> symbolTable = new HashMap<>();
+
 }

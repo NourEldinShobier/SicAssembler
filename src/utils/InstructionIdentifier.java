@@ -27,8 +27,11 @@ public abstract class InstructionIdentifier
     private static Instruction identifyLabel(Instruction instruction)
     {
         String label = instruction.segments[0];
-        //if there's no label, then return instruction
+
         if (label.equals("")) return instruction;
+
+        // CONVERT PC TO HEX
+        LookupTables.symbolTable.put(label, Integer.toString(PC));
 
         return instruction;
     }
@@ -40,15 +43,17 @@ public abstract class InstructionIdentifier
         if (instruction.isStartEnd) initPC(instruction);
 
         else if (instruction.isDirective) {
-            // Notice annotations X,C
+            //HERE
+
 
             PC += length;
         }
         else {
-            if (instruction.mnemonic.format == MnemonicFormat.TWO) length = 16;
-            if (instruction.mnemonic.format == MnemonicFormat.THREE) length = 24;
-            if (instruction.mnemonic.format == MnemonicFormat.FOUR) length = 32;
+            if (instruction.mnemonic.format == MnemonicFormat.TWO) length = 2;
+            if (instruction.mnemonic.format == MnemonicFormat.THREE) length = 3;
+            if (instruction.mnemonic.format == MnemonicFormat.FOUR) length = 4;
 
+            // CONVERT PC TO HEX
             instruction.memoryLocation = Integer.toString(PC);
             PC += length;
         }
