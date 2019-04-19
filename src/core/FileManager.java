@@ -12,7 +12,7 @@ public abstract class FileManager
         ArrayList<String> lines = new ArrayList<>();
 
         try {
-            Scanner scanner = new Scanner(new File("\"C:\\Users\\latin\\Documents\\srcFile.txt\""));
+            Scanner scanner = new Scanner(new File("C:\\SICAssembler\\srcFile.txt"));
             while (scanner.hasNextLine()) lines.add(scanner.nextLine());
         }
         catch (FileNotFoundException e) {

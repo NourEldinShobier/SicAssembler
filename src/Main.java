@@ -6,6 +6,7 @@ import utils.Instruction.MnemonicFormat;
 import utils.InstructionIdentifier;
 import utils.InstructionManager;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,17 +28,20 @@ public class Main extends Application
         assert lines != null;
 
         lines.forEach((line)->{
-            Instruction instruction = InstructionIdentifier.identify(line);
-            instructions.add(instruction);
+            // Ignore comments
+            if(!line.contains(".")){
+                Instruction instruction = InstructionIdentifier.identify(line);
+                instructions.add(instruction);
+            }
         });
 
         InstructionManager.generateListFile(instructions);
 
         // For testing
-        instructions.forEach((instruction)->{
+        /*instructions.forEach((instruction)->{
             if (instruction.mnemonic.format == MnemonicFormat.TWO) System.out.println("TWO");
             if (instruction.mnemonic.format == MnemonicFormat.THREE) System.out.println("THREE");
             if (instruction.mnemonic.format == MnemonicFormat.FOUR) System.out.println("FOUR");
-        });
+        });*/
     }
 }

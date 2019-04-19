@@ -39,18 +39,25 @@ public abstract class InstructionIdentifier
     {
         int length = 0;
 
-        if (instruction.isStartEnd) initPC(instruction);
+        if (instruction.isStartEnd)
+            instruction = diagnoseStartEnd(instruction);
 
         else if (instruction.isDirective) {
 
-            if (instruction.segments[1].equals("BYTE"))
-                length = diagnoseBYTE(instruction.segments[2]);
-            else if (instruction.segments[1].equals("ResB"))
-                length = Integer.parseInt(instruction.segments[2]);
-            else if (instruction.segments[1].equals("ResW"))
-                length = 3*Integer.parseInt(instruction.segments[2]);
-            else if (instruction.segments[1].equals("WORD"))
-               length = diagnoseWORD(instruction.segments[2]);
+            switch (instruction.segments[1]) {
+                case "BYTE":
+                    length = diagnoseBYTE(instruction.segments[2]);
+                    break;
+                case "WORD":
+                    length = diagnoseWORD(instruction.segments[2]);
+                    break;
+                case "RESB":
+                    length = Integer.parseInt(instruction.segments[2]);
+                    break;
+                case "RESW":
+                    length = 3 * Integer.parseInt(instruction.segments[2]);
+                    break;
+            }
 
             instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
@@ -63,7 +70,7 @@ public abstract class InstructionIdentifier
             instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
 
-            // PASS 2 - CODE
+            // PASS 2 - CODE: Identify Mnemonic from instruct set
         }
 
         return instruction;
@@ -75,10 +82,18 @@ public abstract class InstructionIdentifier
         return instruction;
     }
 
-    private static void initPC(Instruction instruction)
+    private static Instruction diagnoseStartEnd(Instruction instruction)
     {
         if (instruction.segments[1].equals("START"))
+        {
             PC = Integer.parseInt(instruction.segments[2], 16);
+            instruction.memoryLocation = Integer.toHexString(
+                    Integer.parseInt(instruction.segments[2], 16)
+            );
+        }
+        else instruction.memoryLocation = Integer.toHexString(PC);
+
+        return instruction;
     }
 
     private static int diagnoseBYTE(String operand)
@@ -97,24 +112,23 @@ public abstract class InstructionIdentifier
 
         return length;
     }
+
     private static int diagnoseWORD(String operand)
-    { int length = 1;
+    {
+        int length = 1;
 
-      if(operand.contains(",")){
-       int i = 0,CommaCount = 0;
+        if (operand.contains(",")) {
+            int i = 0, CommaCount = 0;
 
-       while(i < operand.length()){
+            while (i < operand.length()) {
+                if (operand.charAt(i) == ',') CommaCount++;
 
-           if(operand.charAt(i) == ','){
-               CommaCount++;
-           }
+                i++;
+            }
 
-           i++;
-       }
-       length = CommaCount +1;
-     }
+            length = CommaCount + 1;
+        }
 
-
-     return 3*length;
+        return 3 * length;
     }
 }
