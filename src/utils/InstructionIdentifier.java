@@ -7,11 +7,13 @@ import utils.Instruction.MnemonicFormat;
 public abstract class InstructionIdentifier
 {
     private static int PC = -1;
+    public static boolean fixedFormat = false;
 
     public static Instruction identify(String line)
     {
         Instruction instruction = new Instruction();
-        instruction.segments = line.split("\\s+");
+        instruction.segmentify(fixedFormat, line);
+
 
         instruction = FormatIdentifier.identify(instruction);
 
@@ -84,8 +86,7 @@ public abstract class InstructionIdentifier
 
     private static Instruction diagnoseStartEnd(Instruction instruction)
     {
-        if (instruction.segments[1].equals("START"))
-        {
+        if (instruction.segments[1].equals("START")) {
             PC = Integer.parseInt(instruction.segments[2], 16);
             instruction.memoryLocation = Integer.toHexString(
                     Integer.parseInt(instruction.segments[2], 16)
