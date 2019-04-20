@@ -26,11 +26,8 @@ public class Main extends Application
         assert lines != null;
 
         lines.forEach((line)->{
-            // Ignore comments
-            if(!line.contains(".")){
-                Instruction instruction = InstructionIdentifier.identify(line);
-                instructions.add(instruction);
-            }
+            Instruction instruction = InstructionIdentifier.identify(line);
+            instructions.add(instruction);
         });
 
         InstructionManager.generateListFile(instructions);
