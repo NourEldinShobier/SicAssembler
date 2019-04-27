@@ -1,5 +1,6 @@
-package screens;
+package main;
 
 public class MainScreenController
 {
+
 }

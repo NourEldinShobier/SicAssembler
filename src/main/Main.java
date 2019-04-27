@@ -1,12 +1,10 @@
-import core.FileManager;
-import javafx.application.Application;
-import javafx.stage.Stage;
-import utils.Instruction.Instruction;
-import utils.InstructionIdentifier;
-import utils.InstructionManager;
+package main;
 
-import java.util.ArrayList;
-import java.util.List;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class Main extends Application
 {
@@ -14,26 +12,28 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-
+        Parent root = FXMLLoader.load(getClass().getResource("mainScreen.fxml"));
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();
     }
 
 
     public static void main(String[] args)
     {
-        List<String> lines = FileManager.readFile();
+        launch(args);
+
+        /*List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
 
         assert lines != null;
 
         lines.forEach((line)->{
-            // Ignore comments
-            if(!line.contains(".")){
-                Instruction instruction = InstructionIdentifier.identify(line);
-                instructions.add(instruction);
-            }
+            Instruction instruction = InstructionIdentifier.identify(line);
+            instructions.add(instruction);
         });
 
-        InstructionManager.generateListFile(instructions);
+        InstructionManager.generateListFile(instructions);*/
 
         // For testing
         /*instructions.forEach((instruction)->{
