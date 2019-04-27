@@ -2,10 +2,8 @@ import core.FileManager;
 //import javafx.application.Application;
 //import javafx.stage.Stage;
 import utils.Instruction.Instruction;
-import utils.InstructionIdentifier;
-import utils.InstructionManager;
 
-import core.ErrorController;
+import core.validators.ErrorController;
 import utils.errors.ErrorType;
 
 import java.util.ArrayList;
@@ -29,7 +27,7 @@ public class Main /*extends Application*/
         assert lines != null;
 
 //        lines.forEach((line)->{
-//            // Ignore comments
+//             // Ignore comments
 //            if(!line.contains(".")){
 //                Instruction instruction = InstructionIdentifier.identify(line);
 //                instructions.add(instruction);
