@@ -7,14 +7,9 @@ import utils.Instruction.MnemonicFormat;
 public abstract class InstructionIdentifier
 {
     private static int PC = -1;
-    public static boolean fixedFormat = false;
 
-    public static Instruction identify(String line)
+    public static Instruction identify(Instruction instruction)
     {
-        Instruction instruction = new Instruction();
-        instruction.segmentify(fixedFormat, line);
-
-
         instruction = FormatIdentifier.identify(instruction);
 
         assert instruction != null;

@@ -1,10 +1,19 @@
 package main;
 
+import core.FileManager;
+import core.Parser;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import utils.Instruction.Instruction;
+import utils.InstructionIdentifier;
+import utils.InstructionManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main extends Application
 {
@@ -21,25 +30,21 @@ public class Main extends Application
 
     public static void main(String[] args)
     {
-        launch(args);
+        //launch(args);
 
-        /*List<String> lines = FileManager.readFile();
+        List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
 
         assert lines != null;
 
         lines.forEach((line)->{
-            Instruction instruction = InstructionIdentifier.identify(line);
-            instructions.add(instruction);
+            if (!line.trim().equals("")){
+                Instruction instruction = Parser.parse(line.trim().toUpperCase());
+                if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
+                instructions.add(instruction);
+            }
         });
 
-        InstructionManager.generateListFile(instructions);*/
-
-        // For testing
-        /*instructions.forEach((instruction)->{
-            if (instruction.mnemonic.format == MnemonicFormat.TWO) System.out.println("TWO");
-            if (instruction.mnemonic.format == MnemonicFormat.THREE) System.out.println("THREE");
-            if (instruction.mnemonic.format == MnemonicFormat.FOUR) System.out.println("FOUR");
-        });*/
+        InstructionManager.generateListFile(instructions);
     }
 }

@@ -20,15 +20,20 @@ public abstract class InstructionManager
 
             instructions.forEach((instruction) -> {
                 try {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    stringBuilder.setLength(100);
+                    if (!instruction.isComment){
+                        StringBuilder stringBuilder = new StringBuilder();
+                        stringBuilder.setLength(100);
 
-                    stringBuilder.insert(0, instruction.standardMemoryLocationFormat().toUpperCase());
-                    stringBuilder.insert(17, instruction.segments[0].toUpperCase());
-                    stringBuilder.insert(32, instruction.segments[1].toUpperCase());
-                    stringBuilder.insert(50, instruction.segments[2].toUpperCase());
+                        stringBuilder.insert(0, instruction.standardMemoryLocationFormat().toUpperCase());
+                        stringBuilder.insert(17, instruction.segments[0].toUpperCase());
+                        stringBuilder.insert(32, instruction.segments[1].toUpperCase());
+                        stringBuilder.insert(50, instruction.segments[2].toUpperCase());
 
-                    fileWriter.write(stringBuilder.toString().trim() + "\n");
+                        fileWriter.write(stringBuilder.toString().trim() + "\n");
+                    }
+                    else {
+                        fileWriter.write(instruction.line.trim() + "\n");
+                    }
                 }
                 catch (IOException e) {
                     e.printStackTrace();

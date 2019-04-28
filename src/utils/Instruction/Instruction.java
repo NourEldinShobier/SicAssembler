@@ -2,6 +2,8 @@ package utils.Instruction;
 
 public class Instruction
 {
+    public String line = "";
+
     public String memoryLocation = "";
     public String opCode = "";
 
@@ -10,26 +12,14 @@ public class Instruction
     public String[] segments;
     public String[] operands;
 
+    public boolean isComment = false;
     public boolean isStartEnd = false;
     public boolean isDirective = false;
-
 
     public String standardMemoryLocationFormat()
     {
         StringBuilder stringBuilder = new StringBuilder(memoryLocation);
-
         while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
-
         return stringBuilder.toString();
-    }
-
-    public void segmentify(boolean fixedFormat, String line)
-    {
-        if (fixedFormat) {
-            //...
-        }
-        else {
-            segments = line.split("\\s+");
-        }
     }
 }
