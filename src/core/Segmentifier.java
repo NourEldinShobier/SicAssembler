@@ -27,7 +27,7 @@ public abstract class Segmentifier
 
     private static boolean checkIfComment(String line)
     {
-        return line.startsWith(".");
+        return line.trim().startsWith(".");
     }
 
     private static String[] freeFormat(String line)
