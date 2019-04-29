@@ -24,6 +24,8 @@ public class Main /*extends Application*/
     public static void main(String[] args)
     {
 
+        String s = "   ";
+        System.out.println(s.isBlank());
         //List<String> lines = FileManager.readFile();
         //List<Instruction> instructions = new ArrayList<>();
 
