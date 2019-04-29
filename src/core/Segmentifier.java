@@ -30,31 +30,35 @@ public abstract class Segmentifier
         return line.trim().startsWith(".");
     }
 
-    private static String[] freeFormat(String line)
+    public static String[] freeFormat(String line)
     {
         line = line.trim();
 
         ArrayList<String> stage1 = new ArrayList<String>();
         ArrayList<String> stage2 = new ArrayList<String>();
         ArrayList<String> stage3 = new ArrayList<String>();
-
+        ArrayList<String> stage4 = new ArrayList<String>();
 
         String regex_COMMENT = "(?=(\\.)(.*))";
-        String regex_Literals = "(?=(C'(.*)')|(X'(.*)')|(=C'(.*)')|(=X'(.*)'))";
+        String regex_Literals = "(?=(=C'(.*)')|(=X'(.*)'))";
+        String regex_CHAR$HEX = "(?=(C'(.*)')|(X'(.*)'))";
         String regex_Spaces = "\\s+";
 
         /*
          *  STEPS:
          *  1) Split by (.)
-         *  2) Split by (c'..' | x'..' | =c'....' | =x'....') if doesnt start with (.)
-         *  3) Split by (spaces) if doesnt start with previous cases
+         *  2) Split by (=c'....' | =x'....') if doesnt with (.)
+         *  3) Split by (c'..' | x'..' ) if doesnt start with previous cases
+         *  4) Split by (spaces) if doesnt start with previous cases
          *
-         *  4) Exports all segments
+         *  5) Exports all segments
          */
 
 
+        // 1) Split by (.)
         stage1.addAll(Arrays.asList(line.split(regex_COMMENT)));
 
+        // 2) Split by (=c'....' | =x'....') if doesnt with (.)
         for (String slice : stage1) {
 
             if (!slice.startsWith(".")) {
@@ -65,7 +69,19 @@ public abstract class Segmentifier
             stage2.add(slice);
         }
 
+        // 3) Split by (c'..' | x'..' ) if doesnt start with previous cases
         for (String slice : stage2) {
+
+            if (!slice.startsWith(".") && !slice.startsWith("=C'") && !slice.startsWith("=X'")) {
+                stage3.addAll(Arrays.asList(slice.split(regex_CHAR$HEX)));
+                continue;
+            }
+
+            stage3.add(slice);
+        }
+
+        // 4) Split by (spaces) if doesnt start with previous cases
+        for (String slice : stage3) {
 
             if (!slice.startsWith(".") &&
                     !slice.startsWith("C'") &&
@@ -73,26 +89,27 @@ public abstract class Segmentifier
                     !slice.startsWith("=X'") &&
                     !slice.startsWith("=C'")) {
 
-                stage3.addAll(Arrays.asList(slice.split(regex_Spaces)));
+                stage4.addAll(Arrays.asList(slice.split(regex_Spaces)));
                 continue;
             }
 
-            stage3.add(slice);
+            stage4.add(slice);
         }
 
-        for (int counter = 0; counter < stage3.size(); counter++)
-            stage3.set(counter, stage3.get(counter).trim());
+        // Trim all segments
+        for (int counter = 0; counter < stage4.size(); counter++)
+            stage4.set(counter, stage4.get(counter).trim());
 
 
-        return stage3.toArray(new String[0]);
+        return stage4.toArray(new String[0]);
     }
 
     private static String[] fixedFormat(String line)
     {
         String[] segments = {"", "", "", ""};
 
-        if (line.length() >= 9) segments[0] = line.substring(0, 8).trim();
-        if (line.length() >= 17) segments[1] = line.substring(9, 16).trim();
+        if (line.length() >= 8) segments[0] = line.substring(0, 7).trim();
+        if (line.length() >= 15) segments[1] = line.substring(9, 14).trim();
         if (line.length() >= 35) segments[2] = line.substring(17, 34).trim();
         if (line.length() >= 66) segments[3] = line.substring(35, line.length() - 1).trim();
 
