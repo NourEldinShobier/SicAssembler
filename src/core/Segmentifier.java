@@ -106,12 +106,16 @@ public abstract class Segmentifier
 
     private static String[] fixedFormat(String line)
     {
+        StringBuilder stringBuilder = new StringBuilder(line);
+        while (stringBuilder.length() < 66) stringBuilder.append(" ");
+        line =  stringBuilder.toString();
+
         String[] segments = {"", "", "", ""};
 
-        if (line.length() >= 8) segments[0] = line.substring(0, 7).trim();
-        if (line.length() >= 15) segments[1] = line.substring(9, 14).trim();
-        if (line.length() >= 35) segments[2] = line.substring(17, 34).trim();
-        if (line.length() >= 66) segments[3] = line.substring(35, line.length() - 1).trim();
+        segments[0] = line.substring(0, 7).trim();
+        segments[1] = line.substring(9, 14).trim();
+        segments[2] = line.substring(17, 34).trim();
+        segments[3] = line.substring(35, line.length() - 1).trim();
 
         return segments;
     }

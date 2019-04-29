@@ -54,6 +54,12 @@ public abstract class InstructionIdentifier
                 case "RESW":
                     length = 3 * Integer.parseInt(instruction.segments[2]);
                     break;
+                case "ORG":
+                    PC = Integer.parseInt(instruction.segments[2]);
+                    break;
+                case "EQU":
+                    diagnoseEQU(instruction);
+                    break;
             }
 
             instruction.memoryLocation = Integer.toHexString(PC);
@@ -126,5 +132,19 @@ public abstract class InstructionIdentifier
         }
 
         return 3 * length;
+    }
+
+    private static void diagnoseEQU(Instruction instruction){
+
+        boolean isHex = instruction.segments[2].matches("^[0-9a-fA-F]+$");
+
+        if (isHex){
+            LookupTables.symbolTable.put(instruction.segments[0], instruction.segments[2]);
+            return;
+        }
+
+        String memoryLocation = LookupTables.symbolTable.get(instruction.segments[2]);
+
+        LookupTables.symbolTable.put(instruction.segments[0], memoryLocation);
     }
 }

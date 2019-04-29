@@ -29,7 +29,9 @@ abstract class FormatIdentifier
         return (instruction.segments[1].contains("RESW") ||
                 instruction.segments[1].contains("RESB") ||
                 instruction.segments[1].contains("WORD") ||
-                instruction.segments[1].contains("BYTE"));
+                instruction.segments[1].contains("BYTE") ||
+                instruction.segments[1].contains("ORG") ||
+                instruction.segments[1].contains("EQU"));
     }
 
     private static Instruction diagnoseFormat(Instruction instruction)
