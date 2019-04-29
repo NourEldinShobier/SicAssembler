@@ -1,7 +1,7 @@
 package main;
 
 import core.FileManager;
-import core.Parser;
+import core.Segmentifier;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -39,7 +39,7 @@ public class Main extends Application
 
         lines.forEach((line)->{
             if (!line.trim().equals("")){
-                Instruction instruction = Parser.parse(line.trim().toUpperCase());
+                Instruction instruction = Segmentifier.segmentify(line.trim().toUpperCase());
                 if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                 instructions.add(instruction);
             }
