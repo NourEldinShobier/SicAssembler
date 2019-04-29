@@ -32,6 +32,7 @@ public abstract class Segmentifier
 
     private static String[] freeFormat(String line)
     {
+        line = line.trim();
 
         ArrayList<String> stage1 = new ArrayList<String>();
         ArrayList<String> stage2 = new ArrayList<String>();
@@ -47,6 +48,7 @@ public abstract class Segmentifier
          *  1) Split by (.)
          *  2) Split by (c'..' | x'..' | =c'....' | =x'....') if doesnt start with (.)
          *  3) Split by (spaces) if doesnt start with previous cases
+         *
          *  4) Exports all segments
          */
 
@@ -87,12 +89,12 @@ public abstract class Segmentifier
 
     private static String[] fixedFormat(String line)
     {
-        String[] segments = new String[4];
+        String[] segments = {"", "", "", ""};
 
-        segments[0] = line.substring(0, 8).trim();
-        segments[1] = line.substring(9, 16).trim();
-        segments[2] = line.substring(17, 34).trim();
-        segments[3] = line.substring(35, line.length() - 1).trim(); // comment
+        if (line.length() >= 9) segments[0] = line.substring(0, 8).trim();
+        if (line.length() >= 17) segments[1] = line.substring(9, 16).trim();
+        if (line.length() >= 35) segments[2] = line.substring(17, 34).trim();
+        if (line.length() >= 66) segments[3] = line.substring(35, line.length() - 1).trim();
 
         return segments;
     }

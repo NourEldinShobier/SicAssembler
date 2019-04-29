@@ -39,7 +39,7 @@ public class Main extends Application
 
         lines.forEach((line)->{
             if (!line.trim().equals("")){
-                Instruction instruction = Segmentifier.segmentify(line.trim().toUpperCase());
+                Instruction instruction = Segmentifier.segmentify(line.toUpperCase());
                 if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                 instructions.add(instruction);
             }
