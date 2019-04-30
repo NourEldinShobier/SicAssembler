@@ -11,21 +11,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/META-INF/SicAssembler.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/ErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/ErrorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/SegmentsValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/SegmentsValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/Instruction/Instruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/Instruction/Instruction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/errors/ErrorRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/errors/ErrorRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FixedFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FixedFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FreeFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FreeFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_validators/InstructionValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_validators/InstructionValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/ErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/ErrorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/instruction_validators/InstructionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_validators/InstructionValidator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,14 +24,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
+            <state relative-caret-position="138">
               <caret line="44" column="21" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -150,15 +144,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -217,6 +202,7 @@
         <option value="$PROJECT_DIR$/src/core/validators/ErrorController.java" />
         <option value="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" />
         <option value="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" />
+        <option value="$PROJECT_DIR$/.gitignore.txt" />
       </list>
     </option>
   </component>
@@ -366,13 +352,13 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -675,11 +661,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
+        <state relative-caret-position="138">
           <caret line="44" column="21" lean-forward="true" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
