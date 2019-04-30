@@ -15,7 +15,7 @@ public class ErrorController {
 
     // List of errors in the input code
     // ErrorRecord : {String address, String errorMsg}
-    private List<ErrorRecord> errorsList;
+    private static List<ErrorRecord> errorsList;
 
     // Constructor
     private ErrorController() { errorsList = new ArrayList<>(); }
@@ -31,12 +31,12 @@ public class ErrorController {
     }
 
     // Add an error to the list
-    public void pushError(int lineNumber, Error error) {
+    public static void pushError(int lineNumber, Error error) {
         errorsList.add(new ErrorRecord(lineNumber, error.getErrorMsg()));
     }
 
     // Reset errorsList
-    public void resetErrorList() {
+    public static void resetErrorList() {
         errorsList = new ArrayList<>();
     }
 

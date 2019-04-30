@@ -4,7 +4,9 @@ import core.FileManager;
 import utils.Instruction.Instruction;
 
 import core.validators.ErrorController;
+import utils.errors.ErrorRecord;
 import utils.errors.ErrorType;
+import utils.instruction_format.FixedFormat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +23,14 @@ public class Main /*extends Application*/
 
     public static void main(String[] args)
     {
-        List<String> lines = FileManager.readFile();
-        List<Instruction> instructions = new ArrayList<>();
 
-        assert lines != null;
+        String s = "   ";
+        System.out.println(s.isBlank());
+        //List<String> lines = FileManager.readFile();
+        //List<Instruction> instructions = new ArrayList<>();
+
+        //assert lines != null;
+
 
 //        lines.forEach((line)->{
 //             // Ignore comments
@@ -41,7 +47,7 @@ public class Main /*extends Application*/
         /////////////
 
         // Call to push an error
-        ErrorController.getInstance().pushError("1000", ErrorType.IllegalRegisterAddress);
+        /*ErrorController.getInstance().pushError("1000", ErrorType.IllegalRegisterAddress);
         ErrorController.getInstance().pushError("1003", ErrorType.CannotBeFormatFour);
 
         // Get a list of all errorRecords
@@ -51,7 +57,7 @@ public class Main /*extends Application*/
         System.out.println(ErrorController.getInstance().getLastError().getErrorMsg());
 
         // Get the last errorAddress
-        System.out.println(ErrorController.getInstance().getLastError().getAddress());
+        System.out.println(ErrorController.getInstance().getLastError().getAddress());*/
 
     }
 }
