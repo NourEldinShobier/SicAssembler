@@ -13,6 +13,8 @@ public class Instruction
     public boolean isStartEnd = false;
     public boolean isDirective = false;
 
+    public int lineNumber;
+
 
     public String standardMemoryLocationFormat()
     {

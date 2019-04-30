@@ -31,12 +31,22 @@ public class ErrorController {
     }
 
     // Add an error to the list
-    public void pushError(String address, Error error) {
-        errorsList.add(new ErrorRecord(address, error.getErrorMsg()));
+    public void pushError(int lineNumber, Error error) {
+        errorsList.add(new ErrorRecord(lineNumber, error.getErrorMsg()));
     }
 
     // Reset errorsList
     public void resetErrorList() {
         errorsList = new ArrayList<>();
+    }
+
+    public List<ErrorRecord> getErrorLIst(int lineNumber) {
+        List<ErrorRecord> result = new ArrayList<>();
+        for (ErrorRecord err: errorsList) {
+            if (err.getAddress() == lineNumber) {
+                result.add(err);
+            }
+        }
+        return result;
     }
 }

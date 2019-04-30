@@ -36,7 +36,7 @@ public class SegmentsValidator {
     }
 
     public static void validateSegments() {
-        if (freeFormat) FreeFormat.validate(instruction.segments);
+        if (freeFormat) FreeFormat.validate(instruction.segments,instruction.lineNumber);
         else FixedFormat.validate(instruction.segments);
     }
 
@@ -45,6 +45,7 @@ public class SegmentsValidator {
     }
 
     public void validateOperand() {
+        //if(this.instruction.segments[2])
         validateHexa();
     }
 

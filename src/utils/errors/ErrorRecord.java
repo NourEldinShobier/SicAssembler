@@ -1,16 +1,15 @@
 package utils.errors;
 
 public class ErrorRecord {
-    private String address; //the address of the line with error
+    private int lineCode; //the address of the line with error
     private String errorMsg;
 
-    public ErrorRecord(String address, String errorMsg) {
-        this.address = address;
+    public ErrorRecord(int lineCode, String errorMsg) {
+        this.lineCode = lineCode;
         this.errorMsg = errorMsg;
     }
-
-    public String getAddress() {
-        return address;
+    public int getAddress() {
+        return lineCode;
     }
 
     public String getErrorMsg() {
