@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/errors/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/errors/ErrorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Settings.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,46 +18,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="75" column="89" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/errors/StatementMustHaveLabel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/errors/StatementCannotHaveLabel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="208">
+              <caret line="36" column="49" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,56 +30,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
+        <entry file="file://$PROJECT_DIR$/src/core/FileManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
+              <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
+        <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1134#1135#0" expanded="true" />
-                <element signature="e#1161#1162#0" expanded="true" />
-                <element signature="e#1195#1196#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/errors/NotDecimalString.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/errors/ErrorType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+            <state relative-caret-position="68">
+              <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -155,7 +78,6 @@
         <option value="$PROJECT_DIR$/src/core/FileManager.java" />
         <option value="$PROJECT_DIR$/src/core/Segmentifier.java" />
         <option value="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" />
-        <option value="$PROJECT_DIR$/src/core/Settings.java" />
         <option value="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" />
         <option value="$PROJECT_DIR$/src/utils/errors/StatementMustHaveLabel.java" />
         <option value="$PROJECT_DIR$/src/core/validators/InstructionSet.java" />
@@ -164,6 +86,7 @@
         <option value="$PROJECT_DIR$/src/utils/errors/NotDecimalString.java" />
         <option value="$PROJECT_DIR$/src/utils/errors/ErrorType.java" />
         <option value="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" />
+        <option value="$PROJECT_DIR$/src/core/Settings.java" />
       </list>
     </option>
   </component>
@@ -185,75 +108,90 @@
         <subPane>
           <expand>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="validators" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
               <item name="errors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
               <item name="Instruction" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
               <item name="instruction_format" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="instruction_validators" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -302,8 +240,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556690849567</updated>
+      <workItem from="1556738128613" duration="310000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -318,7 +260,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22390318" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -326,6 +268,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" weight="0.32980332" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36988544" />
@@ -337,6 +281,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
@@ -376,15 +321,12 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java</url>
           <line>93</line>
@@ -550,9 +492,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/SICAssembler/listFile.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://C:/SICAssembler/listFile.txt" />
     <entry file="file://$PROJECT_DIR$/src/core/validators/ErrorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-85">
@@ -564,13 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -609,13 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -623,23 +549,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
+    <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1122">
+          <caret line="75" column="89" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="89" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/errors/StatementMustHaveLabel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -650,59 +577,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/errors/ErrorType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
+        <state relative-caret-position="306">
           <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="51" column="12" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="75" column="89" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/StatementCannotHaveLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/StatementMustHaveLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+        <state relative-caret-position="697">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1134#1135#0" expanded="true" />
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1225#1226#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/errors/StatementCannotHaveLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="68" selection-end-line="14" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
         </state>
       </provider>
     </entry>
