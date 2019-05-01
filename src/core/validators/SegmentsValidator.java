@@ -1,5 +1,6 @@
 package core.validators;
 
+import core.Settings;
 import utils.Instruction.Instruction;
 import utils.errors.ErrorType;
 import utils.instruction_format.FixedFormat;
@@ -17,7 +18,6 @@ public class SegmentsValidator {
     }
 
     private static Instruction instruction;
-    private static Boolean freeFormat = false;
     private static ArrayList<String> symbolTable = new ArrayList<String>();
 
     public static void setInstruction(Instruction instruction) {
@@ -47,8 +47,8 @@ public class SegmentsValidator {
     }
 
     public static String[] validateSegments() {
-        return freeFormat ? FreeFormat.validate(instruction.segments, instruction.lineNumber) :
-                FixedFormat.validate(instruction.segments, instruction.lineNumber);
+        return Settings.isFixedFormat ? FixedFormat.validate(instruction.segments, instruction.lineNumber) :
+                FreeFormat.validate(instruction.segments, instruction.lineNumber);
     }
 
     public static InstructionFormat validateOpcode() {
@@ -62,7 +62,7 @@ public class SegmentsValidator {
 
         if (instructionFormat == null)
             ErrorController.pushError(instruction.lineNumber, ErrorType.UnrecognizedOperation);
-        else if (format4 && (instructionFormat.isFormat2() || instructionFormat.isFormat2())) {
+        else if (format4 && (instructionFormat.isFormat2() || instructionFormat.isDirective())) {
             ErrorController.pushError(instruction.lineNumber, ErrorType.WrongPrefix);
             ErrorController.pushError(instruction.lineNumber, ErrorType.CannotBeFormatFour);
         }

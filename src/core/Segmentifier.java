@@ -7,8 +7,6 @@ import java.util.Arrays;
 
 public abstract class Segmentifier
 {
-    public static boolean fixedFormat = true;
-
     public static Instruction segmentify(String line)
     {
         Instruction instruction = new Instruction();
@@ -17,7 +15,7 @@ public abstract class Segmentifier
         instruction.isComment = checkIfComment(line);
 
         if (!instruction.isComment)
-            instruction.segments = fixedFormat ?
+            instruction.segments = Settings.isFixedFormat ?
                     fixedFormat(line) :
                     freeFormat(line);
 
