@@ -109,7 +109,7 @@ public class InstructionFormat {
         for(int i = 0; i < Operands.length; i++) {
             boolean isReg = false;
             for(int j = 0; j < reg.length; j++) {
-                if(Operands[i].toLowerCase() == reg[j].toLowerCase())
+                if(Operands[i].toLowerCase().equals(reg[j].toLowerCase()))
                     isReg = true;
             }
             if(!isReg) {
