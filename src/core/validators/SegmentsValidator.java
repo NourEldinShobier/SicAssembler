@@ -78,13 +78,14 @@ public class SegmentsValidator {
     }
 
     public static boolean validateLabel(InstructionFormat instructionFormat) {
-        if (!instructionFormat.canHaveLabel() && instruction.segments[0] != "")
+        if (!instructionFormat.canHaveLabel() && !instruction.segments[0].trim().isEmpty())
             ErrorController.pushError(instruction.lineNumber, ErrorType.StatementCannotHaveLabel);
         else if (symbolTable.contains(instruction.segments[0])) {
             if (!instruction.segments[1].toLowerCase().equals("equ"))
                 ErrorController.pushError(instruction.lineNumber, ErrorType.DuplicateLabel);
         } else {
-            symbolTable.add(instruction.segments[0]);
+            if(!instruction.segments[0].trim().isEmpty())
+                symbolTable.add(instruction.segments[0]);
             return true;
         }
         return false;
