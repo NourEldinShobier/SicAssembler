@@ -88,7 +88,7 @@ public class InstructionFormat {
         if(validateOperandsCount(lineNumber, operand)) {
             if (isDirective) return validateDirective(lineNumber, operand);
             else if (format2) return validateformat2(lineNumber, operand);
-            else if (format34) return validateformat2(lineNumber, operand);
+            else if (format34) return validateForamt34(lineNumber, operand);
         }
         return false;
     }
