@@ -7,12 +7,14 @@ import core.Segmentifier;
 //import javafx.scene.Parent;
 //import javafx.scene.Scene;
 //import javafx.stage.Stage;
+import core.Settings;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
 import utils.InstructionManager;
 import utils.errors.ErrorRecord;
+import utils.errors.ErrorType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +41,6 @@ public class Main /*extends Application*/ {
 
         assert lines != null;
 
-
         for (int i = 0; i < lines.size(); i++) {
             String line = lines.get(i);
             if (!line.trim().equals("")) {
@@ -47,14 +48,15 @@ public class Main /*extends Application*/ {
                 instruction.lineNumber = i;
                 if (instruction.segments != null) {
                     Instruction validatedInstruction = SegmentsValidator.validate(instruction);
-                    List<ErrorRecord> errors = ErrorController.getInstance().getErrorLIst(instruction.lineNumber);
 
-                    if (errors.size() == 0) {
+                    if (!ErrorController.getInstance().foundErrors(instruction.lineNumber)) {
                         instruction = validatedInstruction;
                         if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                         instructions.add(instruction);
                     }
 
+                    SegmentsValidator.checkEndStatement(i == lines.size()-1);
+                    List<ErrorRecord> errors = ErrorController.getInstance().getErrorList(instruction.lineNumber);
 
                     System.out.println((errors.size() == 0 ? ANSI_GREEN : ANSI_RED) + instruction.line + ANSI_RESET);
                     errors.forEach(error -> {
@@ -63,6 +65,7 @@ public class Main /*extends Application*/ {
                 }
             }
         }
+
 
         InstructionManager.generateListFile(instructions);
         InstructionManager.printSymbolTable();

@@ -71,7 +71,6 @@ public class SegmentsValidator {
     }
 
 
-
     public static boolean validateLabel(InstructionFormat instructionFormat) {
         if (instructionFormat.mustHaveLabel() && instruction.segments[0].trim().isEmpty())
             ErrorController.pushError(instruction.lineNumber, ErrorType.StatementMustHaveLabel);
@@ -81,10 +80,21 @@ public class SegmentsValidator {
             if (!instruction.segments[1].toLowerCase().equals("equ"))
                 ErrorController.pushError(instruction.lineNumber, ErrorType.DuplicateLabel);
         } else {
-            if(!instruction.segments[0].trim().isEmpty())
+            if (!instruction.segments[0].trim().isEmpty())
                 symbolTable.add(instruction.segments[0]);
             return true;
         }
         return false;
+    }
+
+    public static boolean checkEndStatement(boolean lastInstruction) {
+        if (lastInstruction) {
+            if (instruction.segments[1].trim().toLowerCase().equals("end") &&
+                    instruction.segments[2].trim().toLowerCase().equals(Settings.startLabel))
+                return true;
+            ErrorController.pushError(instruction.lineNumber, ErrorType.MissingEndStatement);
+            return false;
+        }
+        return true;
     }
 }

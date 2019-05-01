@@ -1,6 +1,7 @@
 package utils;
 
 import core.LookupTables;
+import core.Settings;
 import utils.Instruction.Instruction;
 import utils.Instruction.MnemonicFormat;
 
@@ -92,6 +93,8 @@ public abstract class InstructionIdentifier
     private static Instruction diagnoseStartEnd(Instruction instruction)
     {
         if (instruction.segments[1].equals("START")) {
+            Settings.startLabel = instruction.segments[0].trim();
+            Settings.startOperand = instruction.segments[2].trim();
             PC = Integer.parseInt(instruction.segments[2], 16);
             instruction.memoryLocation = Integer.toHexString(
                     Integer.parseInt(instruction.segments[2], 16)
