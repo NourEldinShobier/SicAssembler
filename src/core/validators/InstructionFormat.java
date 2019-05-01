@@ -127,7 +127,7 @@ public class InstructionFormat {
         // if 1 operand
         if(operands.length == 1) {
             //if hexa literal validate
-            if(operand.substring(0,2).toLowerCase().equals("x'") && operands[0].substring(operands[0].length()-1).equals("'"))
+            if(operand.length() > 4 && operand.substring(0,2).toLowerCase().equals("x'") && operands[0].substring(operands[0].length()-1).equals("'"))
                 return validateHexa(lineNumber, operands[0].substring(3, operand.length()-1));
             else
                 return true;
