@@ -34,9 +34,9 @@ public class FreeFormat {
     public static boolean validateSegmentsLength(String[] segments, int lineNumber) {
         if(segments[0].length() >= maxLabelLength)
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MisplacedLabel);
-        else if(segments[0].length() >= maxOpcodeLength)
+        else if(segments[1].length() >= maxOpcodeLength)
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperation);
-        else if(segments[0].length() >= maxOperandLength)
+        else if(segments[2].length() >= maxOperandLength)
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperand);
         else return true;
         return false;

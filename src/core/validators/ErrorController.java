@@ -20,6 +20,10 @@ public class ErrorController {
     // Constructor
     private ErrorController() { errorsList = new ArrayList<>(); }
 
+    public boolean foundErrors(int lineNumber) {
+        return getErrorList(lineNumber).size() != 0;
+    }
+
     // Return last error
     public ErrorRecord getLastError() {
         return errorsList.get(errorsList.size() - 1);
@@ -40,7 +44,7 @@ public class ErrorController {
         errorsList = new ArrayList<>();
     }
 
-    public List<ErrorRecord> getErrorLIst(int lineNumber) {
+    public List<ErrorRecord> getErrorList(int lineNumber) {
         List<ErrorRecord> result = new ArrayList<>();
         for (ErrorRecord err: errorsList) {
             if (err.getAddress() == lineNumber) {
