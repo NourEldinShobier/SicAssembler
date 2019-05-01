@@ -14,4 +14,7 @@ public class ErrorType {
     public static Error CannotBeFormatFour = new CannotBeFormatFour();
     public static Error IllegalRegisterAddress = new IllegalRegisterAddress();
     public static Error MissingEndStatement = new MissingEndStatement();
+
+    public static Error StatementMustHaveLabel = new StatementMustHaveLabel();
+    public static Error NotDecimalString = new NotDecimalString();
 }

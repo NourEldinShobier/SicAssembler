@@ -91,7 +91,7 @@ public class FixedFormat {
      */
     public static String validateOperand(String operand, int lineNumber) {
         /* handling spaces before operands (    T,S)*/
-        CorrectedSegments[2] = operand.replaceAll("\\s+$", "");;
+        CorrectedSegments[2] = operand.replaceAll("\\s+$", "");
         if (operand.startsWith(" ") && !operand.trim().isEmpty()) {
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperand);
             CorrectedSegments[2] = null;

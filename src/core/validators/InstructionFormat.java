@@ -13,6 +13,7 @@ public class InstructionFormat {
     private boolean listOperand = false;
     private boolean isDirective = false;
     private boolean canHaveLabel = true;
+    private boolean mustHaveLabel = false;
 
     //for directives
     private boolean canHaveHexaValue = false;
@@ -39,7 +40,7 @@ public class InstructionFormat {
     }
 
     public InstructionFormat(String name, boolean listOperand,boolean oneOperand,boolean twoOperands, boolean canHaveLabel, boolean canHaveHexaValue,
-                             boolean canHaveDecimalValue, boolean canHaveHexaCharValue, boolean canHaveLabelOperand) {
+                             boolean canHaveDecimalValue, boolean canHaveHexaCharValue, boolean canHaveLabelOperand, boolean mustHaveLabel) {
         this.name = name;
         this.isDirective = true;
         this.listOperand = listOperand;
@@ -50,6 +51,7 @@ public class InstructionFormat {
         this.canHaveHexaValue = canHaveHexaValue;
         this.canHaveHexaCharValue = canHaveHexaCharValue;
         this.canHaveLabelOperand = canHaveLabelOperand;
+        this.mustHaveLabel = mustHaveLabel;
     }
 
     public String getName() {
@@ -82,6 +84,10 @@ public class InstructionFormat {
 
     public boolean canHaveLabel() {
         return canHaveLabel;
+    }
+
+    public boolean mustHaveLabel() {
+        return mustHaveLabel;
     }
 
     public boolean validateOperand(int lineNumber, String operand) {
@@ -142,15 +148,13 @@ public class InstructionFormat {
         if(listOperand) {
             String[] operands = operand.split(",");
             for(int i = 0; i < operands.length; i++) {
-                if(!validateDec(operands[i])){
-                    ErrorController.pushError(lineNumber, ErrorType.MissingMisplacedOperand);
+                if(!validateDec(lineNumber, operands[i]))
                     return false;
-                }
             }
         }
         // if don't accept x'' and c''
         if(!canHaveHexaCharValue) {
-            if(canHaveDecimalValue && validateDec(operand)) return true;
+            if(canHaveDecimalValue && validateDec(lineNumber, operand)) return true;
             if(canHaveHexaValue && validateHexa(lineNumber, operand)) return true;
             if(canHaveLabel) return true;
         }
@@ -184,10 +188,13 @@ public class InstructionFormat {
         return true;
     }
 
-    public static boolean validateDec(String str) {
+    public static boolean validateDec(int lineNumber, String str) {
         for (int i = 1; i < str.length(); i++)
             if (Character.digit(str.charAt(i), 10) == -1)
+            {
+                ErrorController.pushError(lineNumber, ErrorType.NotDecimalString);
                 return false;
+            }
         return true;
     }
 }

@@ -47,13 +47,15 @@ public class Main /*extends Application*/ {
                 instruction.lineNumber = i;
                 if (instruction.segments != null) {
                     Instruction validatedInstruction = SegmentsValidator.validate(instruction);
-                    if (validatedInstruction != null) {
+                    List<ErrorRecord> errors = ErrorController.getInstance().getErrorLIst(instruction.lineNumber);
+
+                    if (errors.size() == 0) {
                         instruction = validatedInstruction;
                         if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                         instructions.add(instruction);
                     }
 
-                    List<ErrorRecord> errors = ErrorController.getInstance().getErrorLIst(instruction.lineNumber);
+
                     System.out.println((errors.size() == 0 ? ANSI_GREEN : ANSI_RED) + instruction.line + ANSI_RESET);
                     errors.forEach(error -> {
                         System.out.println(error.getErrorMsg());
