@@ -153,10 +153,10 @@ public class InstructionFormat {
             }
         }
         // if don't accept x'' and c''
-        if(!canHaveHexaCharValue) {
+        else if(!canHaveHexaCharValue) {
+            if(canHaveLabel) return true;
             if(canHaveDecimalValue && validateDec(lineNumber, operand)) return true;
             if(canHaveHexaValue && validateHexa(lineNumber, operand)) return true;
-            if(canHaveLabel) return true;
         }
         // e.g byte
         else {
@@ -165,14 +165,14 @@ public class InstructionFormat {
             {
                 if(operand.substring(2, operand.length()-1).length() > 2)
                 {
-                    ErrorController.pushError(lineNumber, ErrorType.MissingMisplacedOperand);
+                    ErrorController.pushError(lineNumber, ErrorType.UndefinedCharsInOperand);
                     return false;
                 }
                 return validateHexa(lineNumber, operand.substring(2, operand.length()-1));
             }
             else if(operand.substring(0,2).toLowerCase().equals("c'") && endQuote) return true;
             else {
-                ErrorController.pushError(lineNumber, ErrorType.MissingMisplacedOperand);
+                ErrorController.pushError(lineNumber, ErrorType.UndefinedCharsInOperand);
                 return false;
             }
         }
@@ -180,7 +180,7 @@ public class InstructionFormat {
     }
 
     public boolean validateHexa(int lineNumber, String str) {
-        for (int i = 1; i < str.length(); i++)
+        for (int i = 0; i < str.length(); i++)
             if (Character.digit(str.charAt(i), 16) == -1) {
                 ErrorController.pushError(lineNumber, ErrorType.NotHexaString);
                 return false;

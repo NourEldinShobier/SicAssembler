@@ -46,7 +46,7 @@ public class Main /*extends Application*/ {
             if (!line.trim().equals("")) {
                 Instruction instruction = Segmentifier.segmentify(line.toUpperCase());
                 instruction.lineNumber = i;
-                if (instruction.segments != null) {
+                if (instruction.segments != null && !instruction.isComment) {
                     Instruction validatedInstruction = SegmentsValidator.validate(instruction);
 
                     if (!ErrorController.getInstance().foundErrors(instruction.lineNumber)) {
