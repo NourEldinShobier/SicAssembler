@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InstructionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FixedFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FixedFormat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,17 +23,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="92" column="58" lean-forward="true" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
+            <state relative-caret-position="731">
+              <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="221">
+              <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="357">
               <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
@@ -70,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -78,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/InstructionSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="119">
+              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -96,20 +98,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="429">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
+                <element signature="e#1134#1135#0" expanded="true" />
                 <element signature="e#1161#1162#0" expanded="true" />
+                <element signature="e#1225#1226#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="18" column="114" selection-start-line="18" selection-start-column="114" selection-end-line="18" selection-end-column="114" />
+            <state relative-caret-position="102">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -120,6 +124,7 @@
     <findStrings>
       <find>und</find>
       <find>UndefinedSymbol</find>
+      <find>parts</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,13 +136,13 @@
         <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
         <option value="$PROJECT_DIR$/src/module-info.java" />
         <option value="$PROJECT_DIR$/src/core/Segmentifier.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" />
         <option value="$PROJECT_DIR$/src/utils/Instruction/Instruction.java" />
         <option value="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" />
         <option value="$PROJECT_DIR$/src/core/validators/InstructionSet.java" />
-        <option value="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionManager.java" />
+        <option value="$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
       </list>
     </option>
   </component>
@@ -340,18 +345,6 @@
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -377,6 +370,11 @@
       </expression>
     </expressions>
     <expressions id="setValue">
+      <expression>
+        <expression-string>&quot; S       LDA     X&quot;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>&quot;START   &quot;</expression-string>
         <language-id>JAVA</language-id>
@@ -444,16 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#1161#1162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/SICAssembler/listFile.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -466,46 +454,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/InstructionSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="92" column="58" lean-forward="true" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="731">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -516,10 +473,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="18" column="114" selection-start-line="18" selection-start-column="114" selection-end-line="18" selection-end-column="114" />
+        <state relative-caret-position="102">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="23" column="54" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

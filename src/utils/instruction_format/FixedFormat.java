@@ -27,28 +27,27 @@ public class FixedFormat {
      */
     private static String validateLabel(String label, int lineNumber) {
         /* handling space before label - ( LABEL)*/
+        parts = label.split("//s+");
         if (label.startsWith(" ") && !label.trim().isEmpty()) // label
         {
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MisplacedLabel);
             CorrectedSegments[0] = null;
         }
-        parts = label.split("//s+");
-
         /* handling spaces between label characters - (LA BE L)*/
-        if (parts.length > 1) {
+        else if (parts.length > 1) {
             CorrectedSegments[0] = null;
             ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
+        }
+        /* handling blank character post label not left empty - (LABELMOV)*/
+        else if (label.charAt(BLANK_LABEL) != ' ') {
+            ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperation);
+            CorrectedSegments[0] = null;
         }
         //correct
         else {
             CorrectedSegments[0] = label.split("//s+")[0];
         }
 
-        /* handling blank character post label not left empty - (LABELMOV)*/
-        if (label.charAt(BLANK_LABEL) != ' ') {
-            ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperation);
-            CorrectedSegments[0] = null;
-        }
 
         return CorrectedSegments[0];
     }

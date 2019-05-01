@@ -18,9 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Main /*extends Application*/
-{
-
+public class Main /*extends Application*/ {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\033[0;32m";
 //    @Override
 //    public void start(Stage primaryStage) throws Exception
 //    {
@@ -30,8 +31,7 @@ public class Main /*extends Application*/
 //        primaryStage.show();
 //    }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         //launch(args);
 
         List<String> lines = FileManager.readFile();
@@ -40,24 +40,24 @@ public class Main /*extends Application*/
         assert lines != null;
 
 
-        for(int i = 0; i < lines.size(); i++){
+        for (int i = 0; i < lines.size(); i++) {
             String line = lines.get(i);
-            if (!line.trim().equals("")){
+            if (!line.trim().equals("")) {
                 Instruction instruction = Segmentifier.segmentify(line.toUpperCase());
                 instruction.lineNumber = i;
-                if(instruction.segments != null) {
+                if (instruction.segments != null) {
                     Instruction validatedInstruction = SegmentsValidator.validate(instruction);
-                    if (validatedInstruction != null){
+                    if (validatedInstruction != null) {
                         instruction = validatedInstruction;
                         if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                         instructions.add(instruction);
-                    }else {
-                        System.out.println(instruction.line);
-                        List<ErrorRecord> errors = ErrorController.getInstance().getErrorLIst(instruction.lineNumber);
-                        errors.forEach(error->{
-                            System.out.println(error.getErrorMsg());
-                        });
                     }
+
+                    List<ErrorRecord> errors = ErrorController.getInstance().getErrorLIst(instruction.lineNumber);
+                    System.out.println((errors.size() == 0 ? ANSI_GREEN : ANSI_RED) + instruction.line + ANSI_RESET);
+                    errors.forEach(error -> {
+                        System.out.println(error.getErrorMsg());
+                    });
                 }
             }
         }
