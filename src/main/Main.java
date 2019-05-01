@@ -63,6 +63,7 @@ public class Main /*extends Application*/ {
         }
 
         InstructionManager.generateListFile(instructions);
+        InstructionManager.printSymbolTable();
 
         /////////////
         // Testing //

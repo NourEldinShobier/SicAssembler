@@ -12,6 +12,10 @@ public abstract class InstructionIdentifier
     {
         instruction = FormatIdentifier.identify(instruction);
 
+        for (int i = 0; i < instruction.segments.length; i++)
+            instruction.segments[i] = instruction.segments[i].trim();
+
+
         assert instruction != null;
 
         instruction = identifyLabel(instruction);

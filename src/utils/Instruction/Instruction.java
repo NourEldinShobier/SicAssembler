@@ -20,6 +20,17 @@ public class Instruction {
     public String standardMemoryLocationFormat() {
         StringBuilder stringBuilder = new StringBuilder(memoryLocation);
         while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
+
+        if (stringBuilder.toString().toUpperCase().startsWith("A") ||
+                stringBuilder.toString().toUpperCase().startsWith("B") ||
+                stringBuilder.toString().toUpperCase().startsWith("C") ||
+                stringBuilder.toString().toUpperCase().startsWith("D") ||
+                stringBuilder.toString().toUpperCase().startsWith("E") ||
+                stringBuilder.toString().toUpperCase().startsWith("F")) {
+
+            stringBuilder.insert(0, "0");
+        }
+
         return stringBuilder.toString();
     }
 }
