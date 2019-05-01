@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public abstract class Segmentifier
 {
-    public static boolean fixedFormat = false;
+    public static boolean fixedFormat = true;
 
     public static Instruction segmentify(String line)
     {
@@ -112,10 +112,10 @@ public abstract class Segmentifier
 
         String[] segments = {"", "", "", ""};
 
-        segments[0] = line.substring(0, 7).trim();
-        segments[1] = line.substring(9, 14).trim();
-        segments[2] = line.substring(17, 34).trim();
-        segments[3] = line.substring(35, line.length() - 1).trim();
+        segments[0] = line.substring(0, 9);
+        segments[1] = line.substring(9, 17);
+        segments[2] = line.substring(17, 35);
+        segments[3] = line.substring(35, line.length());
 
         return segments;
     }

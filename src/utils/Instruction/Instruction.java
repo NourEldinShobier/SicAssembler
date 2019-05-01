@@ -1,7 +1,7 @@
 package utils.Instruction;
 
-public class Instruction
-{
+public class Instruction {
+    public int lineNumber = 0;
     public String line = "";
 
     public String memoryLocation = "";
@@ -16,8 +16,8 @@ public class Instruction
     public boolean isStartEnd = false;
     public boolean isDirective = false;
 
-    public String standardMemoryLocationFormat()
-    {
+
+    public String standardMemoryLocationFormat() {
         StringBuilder stringBuilder = new StringBuilder(memoryLocation);
         while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
         return stringBuilder.toString();
