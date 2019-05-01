@@ -14,9 +14,9 @@ public abstract class InstructionManager
         try {
             FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\listFile.txt"));
 
-            fileWriter.write("----------------------------------------------------------\n");
-            fileWriter.write("Address          Label          Mnemonic          Operands\n");
-            fileWriter.write("----------------------------------------------------------\n");
+            fileWriter.write("----------------------------------------------------------" + System.lineSeparator());
+            fileWriter.write("Address          Label          Mnemonic          Operands" + System.lineSeparator());
+            fileWriter.write("----------------------------------------------------------" + System.lineSeparator());
 
             instructions.forEach((instruction) -> {
                 try {
@@ -29,10 +29,10 @@ public abstract class InstructionManager
                         stringBuilder.insert(32, instruction.segments[1].toUpperCase());
                         stringBuilder.insert(50, instruction.segments[2].toUpperCase());
 
-                        fileWriter.write(stringBuilder.toString().trim() + "\n");
+                        fileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
                     }
                     else {
-                        fileWriter.write(instruction.line.trim() + "\n");
+                        fileWriter.write(instruction.line.trim() + System.lineSeparator());
                     }
                 }
                 catch (IOException e) {

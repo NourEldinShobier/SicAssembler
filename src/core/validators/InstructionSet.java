@@ -47,7 +47,7 @@ public class InstructionSet {
             new InstructionFormat("word" , false , true ),
             new InstructionFormat("resw" , false , true ),
             new InstructionFormat("resb" , false , true ),
-            new InstructionFormat("equ" , false , true ),
+            new InstructionFormat("equ" , false , false ),
             new InstructionFormat("org" , false , true ),
             new InstructionFormat("base" , false , true )
     };
