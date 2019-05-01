@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/core/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionFormat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionSet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/errors/NotDecimalString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/errors/NotDecimalString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
+            <state relative-caret-position="204">
+              <caret line="196" column="13" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -110,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
+            <state relative-caret-position="146">
+              <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -145,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/core/FileManager.java" />
         <option value="$PROJECT_DIR$/src/core/Segmentifier.java" />
         <option value="$PROJECT_DIR$/src/utils/errors/StatementMustHaveLabel.java" />
-        <option value="$PROJECT_DIR$/src/core/validators/InstructionSet.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
         <option value="$PROJECT_DIR$/src/core/validators/ErrorController.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionManager.java" />
@@ -160,6 +159,7 @@
         <option value="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" />
         <option value="$PROJECT_DIR$/src/utils/errors/NotDecimalString.java" />
         <option value="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" />
+        <option value="$PROJECT_DIR$/src/core/validators/InstructionSet.java" />
       </list>
     </option>
   </component>
@@ -305,7 +305,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -628,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/UndefinedCharsInOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -659,20 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/UndefinedSymbol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/errors/NotDecimalString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -687,27 +665,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/errors/UndefinedSymbol.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/errors/UndefinedCharsInOperand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+        <state relative-caret-position="119">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
+        <state relative-caret-position="204">
+          <caret line="196" column="13" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>

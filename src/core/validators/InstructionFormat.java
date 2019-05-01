@@ -189,7 +189,7 @@ public class InstructionFormat {
     }
 
     public static boolean validateDec(int lineNumber, String str) {
-        for (int i = 1; i < str.length(); i++)
+        for (int i = 0; i < str.length(); i++)
             if (Character.digit(str.charAt(i), 10) == -1)
             {
                 ErrorController.pushError(lineNumber, ErrorType.NotDecimalString);
