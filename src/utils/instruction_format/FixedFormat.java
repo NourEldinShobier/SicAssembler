@@ -27,7 +27,7 @@ public class FixedFormat {
      */
     private static String validateLabel(String label, int lineNumber) {
         /* handling space before label - ( LABEL)*/
-        parts = label.split("//s+");
+        parts = label.split("\\s+");
         if (label.startsWith(" ") && !label.trim().isEmpty()) // label
         {
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MisplacedLabel);
@@ -58,7 +58,7 @@ public class FixedFormat {
      */
     public static String validateOpcode(String opcode, int lineNumber) {
         /* handling space before mnemonic - ( ADD) */
-        CorrectedSegments[1] = opcode.split("//s+")[0];
+        CorrectedSegments[1] = opcode.split("\\s+")[0];
 
         if (opcode.startsWith(" ")) {
 
@@ -68,7 +68,7 @@ public class FixedFormat {
         }
         /* handling spaces between mnemonic characters - (AD D)*/
 
-        parts = opcode.split("//s+");
+        parts = opcode.split("\\s+");
         if (parts.length > 1) {
             ErrorController.getInstance().pushError(lineNumber, ErrorType.UnrecognizedOperation);
             CorrectedSegments[1] = null;
@@ -91,7 +91,7 @@ public class FixedFormat {
      */
     public static String validateOperand(String operand, int lineNumber) {
         /* handling spaces before operands (    T,S)*/
-        CorrectedSegments[2] = operand.split("//s+")[0];
+        //CorrectedSegments[2] = operand.split("\\s+")[0];
         if (operand.startsWith(" ") && !operand.trim().isEmpty()) {
             ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperand);
             CorrectedSegments[2] = null;

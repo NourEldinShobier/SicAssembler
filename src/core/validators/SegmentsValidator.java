@@ -39,7 +39,7 @@ public class SegmentsValidator {
         validateLabel(instructionFormat);
 
         // validate we have a valid Operand >> error[10], error[12]
-        instructionFormat.validateOperand(instruction.segments[2]);
+        instructionFormat.validateOperand(instruction.lineNumber, instruction.segments[2].trim());
 
         // error[09] should be handled in pass2
 
@@ -70,12 +70,7 @@ public class SegmentsValidator {
         return instructionFormat;
     }
 
-    public static boolean validateHexa(String str) {
-        for (int i = 1; i < str.length(); i++)
-            if (Character.digit(str.charAt(i), 16) == -1)
-                return false;
-        return true;
-    }
+
 
     public static boolean validateLabel(InstructionFormat instructionFormat) {
         if (!instructionFormat.canHaveLabel() && !instruction.segments[0].trim().isEmpty())

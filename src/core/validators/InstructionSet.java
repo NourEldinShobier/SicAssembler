@@ -41,14 +41,14 @@ public class InstructionSet {
             new InstructionFormat("tix", "2c", false, true, true, false, false),
             new InstructionFormat("tixr", "b8", true, false, true, false, false),
 
-            new InstructionFormat("start" , false , true ),
-            new InstructionFormat("end" , false , false ),
-            new InstructionFormat("byte" , true , true ),
-            new InstructionFormat("word" , false , true ),
-            new InstructionFormat("resw" , false , true ),
-            new InstructionFormat("resb" , false , true ),
-            new InstructionFormat("equ" , false , false ),
-            new InstructionFormat("org" , false , true ),
+            new InstructionFormat("start" , false ,true,false,true, true,false,false,false ),
+            new InstructionFormat("end" , false,true,false , false,true,false,false,true ),
+            new InstructionFormat("byte" , false ,true,false, true,false,false,true,false),
+            new InstructionFormat("word" , true ,false,false, true,false,true,false,false ),
+            new InstructionFormat("resw" , false ,true,false, true,false,true,false,false ),
+            new InstructionFormat("resb" , false ,true,false, true ,false,true,false,false),
+            new InstructionFormat("equ" , false ,true,false, true,true,false,false,true ),
+            new InstructionFormat("org" , false ,true,false, false, false,true,false,false),
             new InstructionFormat("base" , false , true )
     };
     //29 elemnts
