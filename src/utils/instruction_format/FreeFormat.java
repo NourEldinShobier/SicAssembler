@@ -9,7 +9,7 @@ public class FreeFormat {
     private static int maxOperandLength = 18;
 
     public static String[] validate(String[] segments, int lineNumber) {
-        String[] correctedSegments = new String[3];
+        String[] correctedSegments = new String[]{"","","",""};
         if( segments.length == 1 ) {
             correctedSegments[2] = "";
             correctedSegments[1] = segments[0];
@@ -24,10 +24,12 @@ public class FreeFormat {
             correctedSegments = segments;
         }
         else if( segments.length >= 4 ) {
-            ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperand);
-            return null;
+            if(!segments[4].startsWith(".")) {
+                ErrorController.getInstance().pushError(lineNumber, ErrorType.MissingMisplacedOperand);
+                return null;
+            }
         }
-        if(validateSegmentsLength(segments, lineNumber)) return correctedSegments;
+        if(validateSegmentsLength(correctedSegments, lineNumber)) return correctedSegments;
         return null;
     }
 

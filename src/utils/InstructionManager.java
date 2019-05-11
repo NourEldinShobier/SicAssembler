@@ -29,7 +29,8 @@ public abstract class InstructionManager
                         stringBuilder.insert(17, instruction.segments[0].toUpperCase());
                         stringBuilder.insert(32, instruction.segments[1].toUpperCase());
                         stringBuilder.insert(50, instruction.segments[2].toUpperCase());
-                        stringBuilder.insert(75, instruction.segments[3].toUpperCase());
+                        if(instruction.segments.length >= 4)
+                            stringBuilder.insert(75, instruction.segments[3].toUpperCase());
 
                         fileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
                     }

@@ -89,8 +89,9 @@ public class SegmentsValidator {
 
     public static boolean checkEndStatement(boolean lastInstruction) {
         if (lastInstruction) {
-            if (instruction.segments[1].trim().toLowerCase().equals("end") &&
-                    instruction.segments[2].trim().toLowerCase().equals(Settings.startLabel))
+            if (instruction.segments != null &&
+                    instruction.segments[1].trim().toLowerCase().equals("end") &&
+                    instruction.segments[2].trim().toLowerCase().equals(Settings.startLabel.toLowerCase()))
                 return true;
             ErrorController.pushError(instruction.lineNumber, ErrorType.MissingEndStatement);
             return false;

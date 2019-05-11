@@ -17,4 +17,7 @@ public class ErrorType {
 
     public static Error StatementMustHaveLabel = new StatementMustHaveLabel();
     public static Error NotDecimalString = new NotDecimalString();
+    public static Error UndefinedCharsInLabel = new UndefinedCharsInLabel();
+    public static Error UndefinedCharsInOpcode = new UndefinedCharsInOpcode();
+    public static Error UndefinedCharsInOperand = new UndefinedCharsInOperand();
 }

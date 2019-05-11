@@ -36,7 +36,7 @@ public class FixedFormat {
         /* handling spaces between label characters - (LA BE L)*/
         else if (parts.length > 1) {
             CorrectedSegments[0] = null;
-            ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
+            ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedCharsInLabel);
         }
         /* handling blank character post label not left empty - (LABELMOV)*/
         else if (label.charAt(BLANK_LABEL) != ' ') {
@@ -101,7 +101,7 @@ public class FixedFormat {
             //case - add a,b,c
             if (operand.substring(operand.indexOf(",") + 1).contains(",")) {
 
-                ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
+                ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedCharsInOperand);
                 CorrectedSegments[2] = null;
             }
 
@@ -123,7 +123,7 @@ public class FixedFormat {
                 //multiple quotes
                 int endingQuote = operand.indexOf("'", operand.indexOf("'") + 1);
                 if (operand.substring(endingQuote + 1).contains(",")) {
-                    ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
+                    ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedCharsInOperand);
                     CorrectedSegments[2] = null;
 
                 }
@@ -142,7 +142,7 @@ public class FixedFormat {
         if (comment.trim().isBlank()) CorrectedSegments[3] = "";
         if (!comment.trim().isEmpty()) {
             if (!comment.startsWith(".")) {
-                ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
+                ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedCharsInOperand);
                 CorrectedSegments[3] = null;
             } else {
                 CorrectedSegments[3] = comment;
