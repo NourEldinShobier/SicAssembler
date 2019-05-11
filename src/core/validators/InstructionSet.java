@@ -42,7 +42,7 @@ public class InstructionSet {
             new InstructionFormat("tixr", "b8", true, false, true, false, false),
 
             new InstructionFormat("start" , false ,true,false,true, true,false,false,false,false ),
-            new InstructionFormat("end" , false,true,false , false,true,false,false,true,false ),
+            new InstructionFormat("end" , false,true,false , false,false,false,false,true,false ),
             new InstructionFormat("byte" , false ,true,false, true,false,false,true,false,true),
             new InstructionFormat("word" , true ,false,false, true,false,true,false,false ,true),
             new InstructionFormat("resw" , false ,true,false, true,false,true,false,false,true ),

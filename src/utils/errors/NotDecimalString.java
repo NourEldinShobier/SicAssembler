@@ -5,7 +5,7 @@ public class NotDecimalString extends Error {
     public NotDecimalString() {
         super(
                 "15",
-                "not a decimal string"
+                "operand is not a decimal string"
         );
     }
 

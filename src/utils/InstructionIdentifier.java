@@ -11,22 +11,21 @@ public abstract class InstructionIdentifier
 
     public static Instruction identify(Instruction instruction)
     {
-        instruction = FormatIdentifier.identify(instruction);
-
+        // Trim Segments
         for (int i = 0; i < instruction.segments.length; i++)
             instruction.segments[i] = instruction.segments[i].trim();
 
+        instruction = FormatIdentifier.identify(instruction);
 
         assert instruction != null;
 
-        instruction = identifyLabel(instruction);
-        instruction = identifyMnemonic(instruction);
-        instruction = identifyOperands(instruction);
+        instruction = diagnoseLabel(instruction);
+        instruction = diagnoseLength(instruction);
 
         return instruction;
     }
 
-    private static Instruction identifyLabel(Instruction instruction)
+    private static Instruction diagnoseLabel(Instruction instruction)
     {
         String label = instruction.segments[0];
 
@@ -37,7 +36,7 @@ public abstract class InstructionIdentifier
         return instruction;
     }
 
-    private static Instruction identifyMnemonic(Instruction instruction)
+    private static Instruction diagnoseLength(Instruction instruction)
     {
         int length = 0;
 
@@ -77,16 +76,8 @@ public abstract class InstructionIdentifier
 
             instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
-
-            // PASS 2 - CODE: Identify Mnemonic from instruct set
         }
 
-        return instruction;
-    }
-
-    private static Instruction identifyOperands(Instruction instruction)
-    {
-        //....
         return instruction;
     }
 

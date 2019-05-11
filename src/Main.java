@@ -1,18 +1,12 @@
-package main;
-
 import core.FileManager;
 import core.Segmentifier;
-//import javafx.application.Application;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Parent;
-//import javafx.scene.Scene;
-//import javafx.stage.Stage;
-import core.Settings;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
+import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
 import utils.InstructionManager;
+import utils.InstructionsEncoders.FormatFOUREncoder;
 import utils.errors.ErrorRecord;
 import utils.errors.ErrorType;
 
@@ -24,16 +18,13 @@ public class Main /*extends Application*/ {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\033[0;32m";
-//    @Override
-//    public void start(Stage primaryStage) throws Exception
-//    {
-//        Parent root = FXMLLoader.load(getClass().getResource("mainScreen.fxml"));
-//        primaryStage.setTitle("Hello World");
-//        primaryStage.setScene(new Scene(root, 300, 275));
-//        primaryStage.show();
-//    }
+
 
     public static void main(String[] args) {
+
+        //ExpressionEvaluator e = new ExpressionEvaluator();
+        //e.evaluate("lab+label - n * s", 0);
+
         //launch(args);
 
         List<String> lines = FileManager.readFile();
@@ -46,7 +37,7 @@ public class Main /*extends Application*/ {
             if (!line.trim().equals("")) {
                 Instruction instruction = Segmentifier.segmentify(line.toUpperCase());
                 instruction.lineNumber = i;
-                if (instruction.segments != null) {
+                if (instruction.segments != null && !instruction.isComment) {
                     Instruction validatedInstruction = SegmentsValidator.validate(instruction);
 
                     if (!ErrorController.getInstance().foundErrors(instruction.lineNumber)) {
@@ -69,6 +60,17 @@ public class Main /*extends Application*/ {
 
         InstructionManager.generateListFile(instructions);
         InstructionManager.printSymbolTable();
+
+       /* Instruction instruction = new Instruction();
+        instruction.segments = new String[3];
+
+        instruction.segments[0] = "";
+        instruction.segments[1] = "+ADD";
+        instruction.segments[2] = "#1000";
+
+        instruction = FormatFOUREncoder.encode(instruction);
+
+        System.out.println(instruction.opCode);*/
 
         /////////////
         // Testing //

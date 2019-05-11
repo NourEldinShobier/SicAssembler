@@ -16,6 +16,9 @@ public class SegmentsValidator {
     public static SegmentsValidator getInstance() {
         return ourInstance;
     }
+    public ArrayList<String> getSymTab() {
+        return symbolTable;
+    }
 
     private static Instruction instruction;
     private static ArrayList<String> symbolTable = new ArrayList<String>();
