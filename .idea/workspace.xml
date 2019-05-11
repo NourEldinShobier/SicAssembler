@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTHREEEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTWOEncoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/InstructionSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/InstructionSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/validators/InstructionSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/MainScreenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/mainScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/FormatIdentifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/FormatIdentifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/Instruction/Mnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/Instruction/Mnemonic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/errors/NotDecimalString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/errors/NotDecimalString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FreeFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/instruction_format/FreeFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/InstructionSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/LookupTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/LookupTables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/InstructionSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/validators/SegmentsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MainScreenController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/mainScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FormatIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FormatIdentifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/errors/NotDecimalString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/errors/NotDecimalString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/instruction_format/FreeFormat.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/ExpressionEvaluator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            <state relative-caret-position="221">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -215,6 +188,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -282,11 +256,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557574269765</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="expression evaluation">
+      <created>1557607148340</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557607148340</updated>
+    </task>
+    <task id="LOCAL-00004" summary="expression evaluation #2">
+      <created>1557607517453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557607517453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16353000" />
+    <option name="totallyTimeSpent" value="17486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -299,9 +287,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25189108" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25189108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -311,12 +298,12 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31587562" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31587562" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
@@ -371,7 +358,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add encoders" />
     <MESSAGE value="Add instruction set &amp; update InstructionIdentifier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add instruction set &amp; update InstructionIdentifier" />
+    <MESSAGE value="expression evaluation" />
+    <MESSAGE value="expression evaluation #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="expression evaluation #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -767,20 +756,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ExpressionEvaluator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ExpressionEvaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
