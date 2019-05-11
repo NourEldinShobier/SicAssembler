@@ -11,11 +11,11 @@ public abstract class InstructionIdentifier
 
     public static Instruction identify(Instruction instruction)
     {
-        instruction = FormatIdentifier.identify(instruction);
-
+        // Trim Segments
         for (int i = 0; i < instruction.segments.length; i++)
             instruction.segments[i] = instruction.segments[i].trim();
 
+        instruction = FormatIdentifier.identify(instruction);
 
         assert instruction != null;
 
@@ -80,7 +80,6 @@ public abstract class InstructionIdentifier
 
         return instruction;
     }
-
 
     private static Instruction diagnoseStartEnd(Instruction instruction)
     {

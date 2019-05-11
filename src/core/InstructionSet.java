@@ -32,7 +32,6 @@ public abstract class InstructionSet
             new Mnemonic("JLT", "38"),
             new Mnemonic("JGT", "34"),
             new Mnemonic("TIX", "2C"),
-
     };
 
     public static Mnemonic[] twoOperandsMnemonics = {

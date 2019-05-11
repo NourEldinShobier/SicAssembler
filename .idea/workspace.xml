@@ -3,8 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/InstructionSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/InstructionSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/MainScreenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/main/mainScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/FormatIdentifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/FormatIdentifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/Instruction/Mnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/Instruction/Mnemonic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/InstructionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/InstructionSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MainScreenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/mainScreen.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/FormatIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/FormatIdentifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREnCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,29 +31,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/core/InstructionSet.java">
+        <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/FormatIdentifier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-89">
-              <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+            <state relative-caret-position="357">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#diagnoseNIXBPE#0;class#FormatFOUREncoder#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +90,12 @@
         <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTWOEncoder.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTHREEEncoder.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREnCoder.java" />
-        <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
         <option value="$PROJECT_DIR$/src/core/InstructionSet.java" />
+        <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
+        <option value="$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java" />
+        <option value="$PROJECT_DIR$/src/utils/FormatIdentifier.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java" />
       </list>
     </option>
   </component>
@@ -133,13 +136,14 @@
               <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
               <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SicAssembler" type="b2602c69:ProjectViewProjectNode" />
               <item name="SicAssembler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="InstructionsEncoders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -175,11 +179,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="SicAssembler" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -203,7 +207,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556690849567</updated>
-      <workItem from="1557572228272" duration="1961000" />
+      <workItem from="1557572228272" duration="7820000" />
     </task>
     <task id="LOCAL-00001" summary="Add encoders">
       <created>1557180191624</created>
@@ -212,11 +216,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557180191624</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add instruction set &amp; update InstructionIdentifier">
+      <created>1557574269765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557574269765</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4755000" />
+    <option name="totallyTimeSpent" value="10614000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -231,7 +242,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -300,17 +311,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add encoders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add encoders" />
+    <MESSAGE value="Add instruction set &amp; update InstructionIdentifier" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add instruction set &amp; update InstructionIdentifier" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java</url>
           <line>163</line>
@@ -515,16 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
@@ -651,31 +647,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREnCoder.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/FormatIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-63">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="130">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="896">
+          <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#diagnoseLabel#0;class#InstructionIdentifier#0" />
             <element signature="method#diagnoseLength#0;class#InstructionIdentifier#0" />
             <element signature="method#diagnoseStartEnd#0;class#InstructionIdentifier#0" />
             <element signature="method#diagnoseBYTE#0;class#InstructionIdentifier#0" />
@@ -685,24 +676,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/FormatIdentifier.java">
+    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89">
-          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+        <state relative-caret-position="-222">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionSet.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="47" />
+        <state relative-caret-position="94">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/InstructionSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        <state relative-caret-position="390">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#diagnoseNIXBPE#0;class#FormatFOUREncoder#0" />
+          </folding>
         </state>
       </provider>
     </entry>
