@@ -14,10 +14,10 @@ public class FormatFOUREncoder {
         String address = diagnoseAddress(instruction.segments[2]);
 
         String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + standardAddress(address);
-        String HEXOpCode = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
+        String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
 
         // Standard Opcode
-        StringBuilder stringBuilder = new StringBuilder(HEXOpCode);
+        StringBuilder stringBuilder = new StringBuilder(opCodeHEX);
         while (stringBuilder.length() < 8) stringBuilder.insert(0, "0");
 
         instruction.opCode = stringBuilder.toString().toUpperCase();
@@ -93,17 +93,26 @@ public class FormatFOUREncoder {
     }
 
     private static String standardOpCode(String opCode) {
+        char[] nibbles = new char[2];
 
-        int decimalOpCode = (Integer.parseInt(opCode, 16));
+        nibbles[0] = opCode.charAt(0);
+        nibbles[1] = opCode.charAt(1);
 
-        StringBuilder stringBuilder = new StringBuilder(Integer.toBinaryString(decimalOpCode));
-        while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
+        String nibbleONEBinary = Integer.toBinaryString(Integer.parseInt(String.valueOf(nibbles[0]), 16));
+        String nibbleTWOBinary = Integer.toBinaryString(Integer.parseInt(String.valueOf(nibbles[1]), 16));
 
-        return stringBuilder.toString();
+        StringBuilder nibbleONEBuilder = new StringBuilder(nibbleONEBinary);
+        while (nibbleONEBuilder.length() < 4) nibbleONEBuilder.insert(0, "0");
+
+        StringBuilder nibbleTWOBuilder = new StringBuilder(nibbleTWOBinary);
+        while (nibbleTWOBuilder.length() < 4) nibbleTWOBuilder.insert(0, "0");
+
+        String totalBinary = nibbleONEBuilder.toString() + nibbleTWOBuilder.toString();
+
+        return totalBinary.substring(0,6);
     }
 
     private static String standardAddress(String address) {
-
         StringBuilder stringBuilder = new StringBuilder(address);
         while (stringBuilder.length() < 20) stringBuilder.insert(0, "0");
 

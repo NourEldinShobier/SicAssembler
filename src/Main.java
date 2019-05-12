@@ -27,6 +27,8 @@ public class Main /*extends Application*/ {
         List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
 
+        InstructionIdentifier.PASS = 1;
+
         assert lines != null;
 
         for (int i = 0; i < lines.size(); i++) {
@@ -43,7 +45,7 @@ public class Main /*extends Application*/ {
                         instructions.add(instruction);
                     }
 
-                    SegmentsValidator.checkEndStatement(i == lines.size()-1);
+                    SegmentsValidator.checkEndStatement(i == lines.size() - 1);
                     List<ErrorRecord> errors = ErrorController.getInstance().getErrorList(instruction.lineNumber);
 
                     System.out.println((errors.size() == 0 ? ANSI_GREEN : ANSI_RED) + instruction.line + ANSI_RESET);
@@ -54,14 +56,21 @@ public class Main /*extends Application*/ {
             }
         }
 
+        InstructionIdentifier.PASS = 2;
+
+        for (int i = 0; i < instructions.size(); i++) {
+            Instruction temp = instructions.get(i);
+            temp = InstructionIdentifier.identify(temp);
+            instructions.set(i, temp);
+        }
 
         InstructionManager.generateListFile(instructions);
+        //InstructionManager.generateOBJFile(instructions);
         InstructionManager.printSymbolTable();
 
 
-
-        ExpressionEvaluator e = new ExpressionEvaluator();
-        System.out.println(e.evaluate("GAMMA+BETA - 10 * 9", 0));
+        /*ExpressionEvaluator e = new ExpressionEvaluator();
+        System.out.println(e.evaluate("GAMMA+BETA - 10 * 9", 0));*/
 
 
        /* Instruction instruction = new Instruction();

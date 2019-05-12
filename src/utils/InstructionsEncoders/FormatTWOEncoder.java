@@ -19,9 +19,6 @@ public class FormatTWOEncoder {
         while (stringBuilder.length() < 4) stringBuilder.insert(0, "0");
 
         instruction.opCode = stringBuilder.toString().toUpperCase();
-
-        System.out.println(instruction.opCode);
-
         return instruction;
     }
 

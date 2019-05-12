@@ -7,4 +7,6 @@ public class Settings {
 
     public static String startLabel = "";
     public static String startOperand = "";
+
+    public static String OBJProgLength = "";
 }
