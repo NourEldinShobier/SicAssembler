@@ -1,7 +1,9 @@
 package utils;
 
 
+import core.InstructionSet;
 import utils.Instruction.Instruction;
+import utils.Instruction.Mnemonic;
 import utils.Instruction.MnemonicFormat;
 
 abstract class FormatIdentifier
@@ -10,7 +12,6 @@ abstract class FormatIdentifier
     {
         if (isStartEnd(instruction)) instruction.isStartEnd = true;
         if (isDirective(instruction)) instruction.isDirective = true;
-
 
         if (!instruction.isDirective && !instruction.isStartEnd)
             instruction = diagnoseFormat(instruction);
@@ -36,14 +37,20 @@ abstract class FormatIdentifier
 
     private static Instruction diagnoseFormat(Instruction instruction)
     {
-        if (instruction.segments[2].contains(","))
-            instruction.mnemonic.format = MnemonicFormat.TWO;
-
-        else if (instruction.segments[1].startsWith("+"))
+        if (instruction.segments[1].startsWith("+"))
+        {
             instruction.mnemonic.format = MnemonicFormat.FOUR;
-        else
-            instruction.mnemonic.format = MnemonicFormat.THREE;
+            return instruction;
+        }
 
-        return instruction;
+        for (Mnemonic mnemonic : InstructionSet.oneOperandMnemonics){
+            if(mnemonic.name.equals(instruction.segments[1])){
+                instruction.mnemonic.format = MnemonicFormat.THREE;
+                return  instruction;
+            }
+        }
+
+        instruction.mnemonic.format = MnemonicFormat.TWO;
+        return  instruction;
     }
 }

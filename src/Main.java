@@ -1,12 +1,14 @@
-package main;
 import core.FileManager;
 import core.Segmentifier;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
+import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
 import utils.InstructionManager;
+import utils.InstructionsEncoders.FormatFOUREncoder;
 import utils.errors.ErrorRecord;
+import utils.errors.ErrorType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +18,11 @@ public class Main /*extends Application*/ {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\033[0;32m";
-//    @Override
-//    public void start(Stage primaryStage) throws Exception
-//    {
-//        Parent root = FXMLLoader.load(getClass().getResource("mainScreen.fxml"));
-//        primaryStage.setTitle("Hello World");
-//        primaryStage.setScene(new Scene(root, 300, 275));
-//        primaryStage.show();
-//    }
+
 
     public static void main(String[] args) {
-        //launch(args);
 
+        //launch(args);
 
         List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
@@ -62,6 +57,34 @@ public class Main /*extends Application*/ {
 
         InstructionManager.generateListFile(instructions);
         InstructionManager.printSymbolTable();
+
+
+
+        ExpressionEvaluator e = new ExpressionEvaluator();
+        System.out.println(e.evaluate("GAMMA+BETA - 10 * 9", 0));
+
+
+       /* Instruction instruction = new Instruction();
+        instruction.segments = new String[3];
+        instruction.segments[0] = "";
+        instruction.segments[1] = "+ADD";
+        instruction.segments[2] = "#1000";
+        instruction = FormatFOUREncoder.encode(instruction);
+        System.out.println(instruction.opCode);*/
+
+        /////////////
+        // Testing //
+        /////////////
+
+        // Call to push an error
+        /*ErrorController.getInstance().pushError("1000", ErrorType.IllegalRegisterAddress);
+        ErrorController.getInstance().pushError("1003", ErrorType.CannotBeFormatFour);
+        // Get a list of all errorRecords
+        ErrorController.getInstance().getErrorsList().forEach(errorRecord -> System.out.println(errorRecord.getErrorMsg()));
+        // Get the last errorMsg
+        System.out.println(ErrorController.getInstance().getLastError().getErrorMsg());
+        // Get the last errorAddress
+        System.out.println(ErrorController.getInstance().getLastError().getAddress());*/
 
     }
 }
