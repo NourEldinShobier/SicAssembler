@@ -1,20 +1,12 @@
 package main;
-
 import core.FileManager;
 import core.Segmentifier;
-//import javafx.application.Application;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Parent;
-//import javafx.scene.Scene;
-//import javafx.stage.Stage;
-import core.Settings;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
 import utils.InstructionManager;
 import utils.errors.ErrorRecord;
-import utils.errors.ErrorType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +27,7 @@ public class Main /*extends Application*/ {
 
     public static void main(String[] args) {
         //launch(args);
+
 
         List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
@@ -69,23 +62,6 @@ public class Main /*extends Application*/ {
 
         InstructionManager.generateListFile(instructions);
         InstructionManager.printSymbolTable();
-
-        /////////////
-        // Testing //
-        /////////////
-
-        // Call to push an error
-        /*ErrorController.getInstance().pushError("1000", ErrorType.IllegalRegisterAddress);
-        ErrorController.getInstance().pushError("1003", ErrorType.CannotBeFormatFour);
-
-        // Get a list of all errorRecords
-        ErrorController.getInstance().getErrorsList().forEach(errorRecord -> System.out.println(errorRecord.getErrorMsg()));
-
-        // Get the last errorMsg
-        System.out.println(ErrorController.getInstance().getLastError().getErrorMsg());
-
-        // Get the last errorAddress
-        System.out.println(ErrorController.getInstance().getLastError().getAddress());*/
 
     }
 }

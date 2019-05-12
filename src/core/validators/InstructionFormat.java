@@ -154,7 +154,7 @@ public class InstructionFormat {
         }
         // if don't accept x'' and c''
         else if(!canHaveHexaCharValue) {
-            if(canHaveLabel) return true;
+            if(canHaveLabelOperand) return true;
             if(canHaveDecimalValue && validateDec(lineNumber, operand)) return true;
             if(canHaveHexaValue && validateHexa(lineNumber, operand)) return true;
         }
