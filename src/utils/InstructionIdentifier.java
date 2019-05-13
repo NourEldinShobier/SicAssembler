@@ -18,35 +18,41 @@ public abstract class InstructionIdentifier {
             instruction.segments[i] = instruction.segments[i].trim();
 
         if (PASS == 1) {
-            instruction = FormatIdentifier.identify(instruction);
-
-            assert instruction != null;
-
-            if (!instruction.segments[1].equals("EQU"))
-                instruction = diagnoseLabel(instruction);
-
-            instruction = diagnoseLength(instruction);
-
-            return instruction;
+            return PassONEIdentification(instruction);
         } else {
-            if (instruction.segments[1].equals("EQU")) {
-                diagnoseEQU(instruction);
-                return instruction;
-            }
+            return PassTWOIdentification(instruction);
+        }
+    }
 
-            if (!instruction.isDirective && !instruction.isStartEnd) {
-                if (instruction.mnemonic.format == MnemonicFormat.TWO)
-                    instruction = FormatTWOEncoder.encode(instruction);
-
-                /*else if (instruction.mnemonic.format == MnemonicFormat.THREE)
-                    instruction = FormatTHREEEncoder.encode(instruction);*/
-
-               else if (instruction.mnemonic.format == MnemonicFormat.FOUR)
-                    instruction = FormatFOUREncoder.encode(instruction);
-            }
-
+    private static Instruction PassTWOIdentification(Instruction instruction) {
+        if (instruction.segments[1].equals("EQU")) {
+            diagnoseEQU(instruction);
             return instruction;
         }
+
+        if (!instruction.isDirective && !instruction.isStartEnd) {
+            if (instruction.mnemonic.format == MnemonicFormat.TWO)
+                instruction = FormatTWOEncoder.encode(instruction);
+
+            /*else if (instruction.mnemonic.format == MnemonicFormat.THREE)
+                instruction = FormatTHREEEncoder.encode(instruction);*/
+
+            else if (instruction.mnemonic.format == MnemonicFormat.FOUR)
+                instruction = FormatFOUREncoder.encode(instruction);
+        }
+
+        return instruction;
+    }
+
+    private static Instruction PassONEIdentification(Instruction instruction) {
+        instruction = FormatIdentifier.identify(instruction);
+
+        assert instruction != null;
+
+        instruction = diagnoseLabel(instruction);
+        instruction = diagnoseLength(instruction);
+
+        return instruction;
     }
 
     private static Instruction diagnoseLabel(Instruction instruction) {
@@ -70,22 +76,25 @@ public abstract class InstructionIdentifier {
             instruction = diagnoseStartEnd(instruction);
 
         else if (instruction.isDirective) {
-
             switch (instruction.segments[1]) {
                 case "BYTE":
                     length = diagnoseBYTE(instruction.segments[2]);
+                    Settings.programLength += length;
                     instruction.memoryLocation = Integer.toHexString(PC);
                     break;
                 case "WORD":
                     length = diagnoseWORD(instruction.segments[2]);
+                    Settings.programLength += length;
                     instruction.memoryLocation = Integer.toHexString(PC);
                     break;
                 case "RESB":
                     length = Integer.parseInt(instruction.segments[2]);
+                    Settings.programLength += length;
                     instruction.memoryLocation = Integer.toHexString(PC);
                     break;
                 case "RESW":
                     length = 3 * Integer.parseInt(instruction.segments[2]);
+                    Settings.programLength += length;
                     instruction.memoryLocation = Integer.toHexString(PC);
                     break;
                 case "ORG":
@@ -103,6 +112,7 @@ public abstract class InstructionIdentifier {
             if (instruction.mnemonic.format == MnemonicFormat.THREE) length = 3;
             if (instruction.mnemonic.format == MnemonicFormat.FOUR) length = 4;
 
+            Settings.programLength += length;
             instruction.memoryLocation = Integer.toHexString(PC);
             PC += length;
         }

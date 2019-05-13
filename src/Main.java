@@ -1,5 +1,6 @@
 import core.FileManager;
 import core.Segmentifier;
+import core.Settings;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
 import utils.ExpressionEvaluator;
@@ -65,7 +66,7 @@ public class Main /*extends Application*/ {
         }
 
         InstructionManager.generateListFile(instructions);
-        //InstructionManager.generateOBJFile(instructions);
+        InstructionManager.generateOBJFile(instructions);
         InstructionManager.printSymbolTable();
 
 
