@@ -14,9 +14,12 @@ public abstract class InstructionManager {
         try {
             FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\listFile.txt"));
 
-            fileWriter.write("----------------------------------------------------------" + System.lineSeparator());
-            fileWriter.write("Address          Label          Mnemonic          Operands" + System.lineSeparator());
-            fileWriter.write("----------------------------------------------------------" + System.lineSeparator());
+            fileWriter.write("------------------------------------ OUTPUT -----------------------------------" + System.lineSeparator());
+            fileWriter.write(System.lineSeparator());
+
+            fileWriter.write("LINE NO.       ADDRESS       LABEL       MNEMONIC       OPERANDS       COMMENTS" + System.lineSeparator());
+            fileWriter.write("--------       -------       -----       --------       --------       --------" + System.lineSeparator());
+            fileWriter.write(System.lineSeparator());
 
             instructions.forEach((instruction) -> {
                 try {
@@ -24,12 +27,13 @@ public abstract class InstructionManager {
                         StringBuilder stringBuilder = new StringBuilder();
                         stringBuilder.setLength(100);
 
-                        stringBuilder.insert(0, instruction.standardMemoryLocationFormat().toUpperCase());
-                        stringBuilder.insert(17, instruction.segments[0].toUpperCase());
-                        stringBuilder.insert(32, instruction.segments[1].toUpperCase());
-                        stringBuilder.insert(50, instruction.segments[2].toUpperCase());
-                        if (instruction.segments.length >= 4)
-                            stringBuilder.insert(75, instruction.segments[3].toUpperCase());
+                        stringBuilder.insert(0, instruction.lineNumber + 1);
+                        stringBuilder.insert(15, instruction.standardMemoryLocationFormat().toUpperCase());
+                        stringBuilder.insert(29, instruction.segments[0].toUpperCase());
+                        stringBuilder.insert(41, instruction.segments[1].toUpperCase());
+                        stringBuilder.insert(56, instruction.segments[2].toUpperCase());
+                        stringBuilder.insert(71, instruction.segments[3].toUpperCase());
+
 
                         fileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
                     } else {
@@ -68,8 +72,8 @@ public abstract class InstructionManager {
             stringBuilder.insert(7, "^" + "00");
             fileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
 
-            for (Instruction instruction: instructions){
-                if (!instruction.isStartEnd && !instruction.isDirective && !instruction.isComment){
+            for (Instruction instruction : instructions) {
+                if (!instruction.isStartEnd && !instruction.isDirective && !instruction.isComment) {
 
                 }
             }
@@ -89,16 +93,50 @@ public abstract class InstructionManager {
     }
 
     public static void printSymbolTable() {
-        System.out.println("-------------");
-        System.out.println("Symbol Table");
-        System.out.println("-------------");
 
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(new File("C:\\SICAssembler\\listFile.txt"),true);
+            fileWriter.write(System.lineSeparator());
+            fileWriter.write(System.lineSeparator());
+            fileWriter.write("--------------------------------- SYMBOL TABLE --------------------------------" + System.lineSeparator());
+            fileWriter.write(System.lineSeparator());
+
+            fileWriter.write("LABEL         ADDRESS " + System.lineSeparator());
+            fileWriter.write("-----         -------" + System.lineSeparator());
+            fileWriter.write(System.lineSeparator());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FileWriter finalFileWriter = fileWriter;
         LookupTables.symbolTable.forEach((key, value) -> {
-            System.out.println(key.toUpperCase() + " :: " + standardMemoryLocation(value));
+            try {
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.setLength(100);
+
+                stringBuilder.insert(0, key.toUpperCase());
+                stringBuilder.insert(14, standardMemoryLocation(value));
+
+                finalFileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
+
+        try {
+            fileWriter.write(System.lineSeparator());
+            fileWriter.write("-------------------------------------------------------------------------------" + System.lineSeparator());
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    private static String standardMemoryLocation(String address){
+    private static String standardMemoryLocation(String address) {
         StringBuilder stringBuilder = new StringBuilder(address);
         while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
 
@@ -115,7 +153,7 @@ public abstract class InstructionManager {
         return stringBuilder.toString().toUpperCase();
     }
 
-    private static String standardProgramLength(){
+    private static String standardProgramLength() {
         String hexLength = Integer.toHexString(Settings.programLength - 1);
 
         StringBuilder stringBuilder = new StringBuilder(hexLength);
