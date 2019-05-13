@@ -6,8 +6,6 @@ import utils.Instruction.Instruction;
 import utils.Instruction.Mnemonic;
 import utils.Instruction.MnemonicFormat;
 
-import java.util.Arrays;
-
 public class FormatFOUREncoder {
     public static Instruction encode(Instruction instruction) {
         instruction.mnemonic = diagnoseMnemonic(instruction.segments[1]);
@@ -15,12 +13,14 @@ public class FormatFOUREncoder {
         String nixbpe = diagnoseNIXBPE(instruction.segments[2]);
         String address = diagnoseAddress(instruction.segments[2]);
 
-        // convert nixbpe to HEX
-        int decimal = Integer.parseInt(nixbpe,2);
-        nixbpe = Integer.toString(decimal,16);
+        String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + standardAddress(address);
+        String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
 
-        instruction.opCode = instruction.mnemonic.opCode + " " + nixbpe + " " + address;
+        // Standard Opcode
+        StringBuilder stringBuilder = new StringBuilder(opCodeHEX);
+        while (stringBuilder.length() < 8) stringBuilder.insert(0, "0");
 
+        instruction.opCode = stringBuilder.toString().toUpperCase();
         return instruction;
     }
 
@@ -42,7 +42,7 @@ public class FormatFOUREncoder {
     }
 
     private static String diagnoseNIXBPE(String operand) {
-        char[] nixbpe = {' ',' ',' ',' ',' ',' '};
+        char[] nixbpe = {' ', ' ', ' ', ' ', ' ', ' '};
 
         // e
         nixbpe[5] = '1';
@@ -72,18 +72,50 @@ public class FormatFOUREncoder {
 
     private static String diagnoseAddress(String operand) {
 
-        if (!operand.startsWith("@") && !operand.startsWith("#")) {
-            boolean isHex = operand.matches("^[0-9a-fA-F]+$");
-
-            if (isHex) return operand;
-            else return LookupTables.symbolTable.get(operand);
-        } else {
+        if (operand.startsWith("@") || operand.startsWith("#"))
             operand = operand.substring(1);
 
-            boolean isHex = operand.matches("^[0-9a-fA-F]+$");
+        return getBinAddressFromNum_LABEL(operand);
+    }
 
-            if (isHex) return operand;
-            else return LookupTables.symbolTable.get(operand);
+    private static String getBinAddressFromNum_LABEL(String operand) {
+        boolean isDecimal = operand.matches("\\d*\\.?\\d+");
+
+        if (isDecimal) {
+            int decimalAddress = Integer.parseInt(operand, 10);
+            return Integer.toBinaryString(decimalAddress);
+        } else {
+            operand = LookupTables.symbolTable.get(operand);
+
+            int decimalAddress = Integer.parseInt(operand, 16);
+            return Integer.toBinaryString(decimalAddress);
         }
+    }
+
+    private static String standardOpCode(String opCode) {
+        char[] nibbles = new char[2];
+
+        nibbles[0] = opCode.charAt(0);
+        nibbles[1] = opCode.charAt(1);
+
+        String nibbleONEBinary = Integer.toBinaryString(Integer.parseInt(String.valueOf(nibbles[0]), 16));
+        String nibbleTWOBinary = Integer.toBinaryString(Integer.parseInt(String.valueOf(nibbles[1]), 16));
+
+        StringBuilder nibbleONEBuilder = new StringBuilder(nibbleONEBinary);
+        while (nibbleONEBuilder.length() < 4) nibbleONEBuilder.insert(0, "0");
+
+        StringBuilder nibbleTWOBuilder = new StringBuilder(nibbleTWOBinary);
+        while (nibbleTWOBuilder.length() < 4) nibbleTWOBuilder.insert(0, "0");
+
+        String totalBinary = nibbleONEBuilder.toString() + nibbleTWOBuilder.toString();
+
+        return totalBinary.substring(0,6);
+    }
+
+    private static String standardAddress(String address) {
+        StringBuilder stringBuilder = new StringBuilder(address);
+        while (stringBuilder.length() < 20) stringBuilder.insert(0, "0");
+
+        return stringBuilder.toString();
     }
 }
