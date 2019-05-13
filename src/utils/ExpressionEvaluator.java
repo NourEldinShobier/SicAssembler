@@ -19,13 +19,13 @@ public class ExpressionEvaluator {
         //LookupTables.setSymbolTable();
 
         /** segmentify expression*/
-        String[] exps  =expression.split("(?<=\\+)|(?=\\+)|(?<=\\-)|(?=\\-)|(?<=\\*)|(?=\\*)|(?<=\\/)|(?=\\/)");
+        String[] exps  =expression.split("(?<=\\+)|(?=\\+)|(?<=\\-)|(?=\\-)|(?<=\\*)|(?=\\*)|(?<=\\/)|(?=\\/)|(?<=\\))|(?=\\))|(?<=\\()|(?=\\()");
 
         /** search symtab for label */
         for(String label : exps)
         {
             String trimmed = label.trim();
-            if(validateDec(trimmed) || trimmed.equals("+") || trimmed.equals("-") || trimmed.equals("*") || trimmed.equals("/") || trimmed.equals("^") || trimmed.equals("%"))
+            if(validateDec(trimmed)|| trimmed.equals(")") || trimmed.equals("(") || trimmed.equals("+") || trimmed.equals("-") || trimmed.equals("*") || trimmed.equals("/") || trimmed.equals("^") || trimmed.equals("%"))
                 continue;
             if(!LookupTables.symbolTable.containsKey(trimmed)){
                 ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);

@@ -61,7 +61,7 @@ public class Main /*extends Application*/ {
 
 
         ExpressionEvaluator e = new ExpressionEvaluator();
-        System.out.println(e.evaluate("GAMMA+BETA - 10 * 9", 0));
+        System.out.println(e.evaluate("GAMMA+(BETA - 10) * 9", 0));
 
 
        /* Instruction instruction = new Instruction();
