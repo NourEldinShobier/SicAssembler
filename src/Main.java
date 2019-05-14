@@ -27,6 +27,7 @@ public class Main /*extends Application*/ {
 
         List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
+        List<ErrorRecord> errors = null;
 
         InstructionIdentifier.PASS = 1;
 
@@ -47,27 +48,27 @@ public class Main /*extends Application*/ {
                     }
 
                     SegmentsValidator.checkEndStatement(i == lines.size() - 1);
-                    List<ErrorRecord> errors = ErrorController.getInstance().getErrorList(instruction.lineNumber);
+                    errors = ErrorController.getInstance().getErrorList(instruction.lineNumber);
 
                     System.out.println((errors.size() == 0 ? ANSI_GREEN : ANSI_RED) + instruction.line + ANSI_RESET);
-                    errors.forEach(error -> {
-                        System.out.println(error.getErrorMsg());
-                    });
+                    errors.forEach(error -> System.out.println(error.getErrorMsg()));
                 }
             }
         }
 
-        InstructionIdentifier.PASS = 2;
+        if (errors.size() == 0) {
+            InstructionIdentifier.PASS = 2;
 
-        for (int i = 0; i < instructions.size(); i++) {
-            Instruction temp = instructions.get(i);
-            temp = InstructionIdentifier.identify(temp);
-            instructions.set(i, temp);
+            for (int i = 0; i < instructions.size(); i++) {
+                Instruction temp = instructions.get(i);
+                temp = InstructionIdentifier.identify(temp);
+                instructions.set(i, temp);
+            }
+
+            InstructionManager.generateListFile(instructions);
+            InstructionManager.generateOBJFile(instructions);
+            InstructionManager.printSymbolTable();
         }
-
-        InstructionManager.generateListFile(instructions);
-        InstructionManager.generateOBJFile(instructions);
-        InstructionManager.printSymbolTable();
 
 
         /*ExpressionEvaluator e = new ExpressionEvaluator();
