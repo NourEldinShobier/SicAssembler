@@ -178,5 +178,26 @@ public abstract class InstructionIdentifier {
 
         String memoryLocation = LookupTables.symbolTable.get(instruction.segments[2]);
         LookupTables.symbolTable.put(instruction.segments[0], memoryLocation);
+
+    }
+
+    private static void diagnoseLiterals(Instruction instruction){
+        if(instruction.segments[2].startsWith("=c") || instruction.segments[2].startsWith("=C") || instruction.segments[2].startsWith("=x") || instruction.segments[2].startsWith("=X") ){
+            LookupTables.literalTable.put(instruction.segments[2], calculateLiteralLength(instruction.segments[2]));
+        }
+
+    }
+    private static String calculateLiteralLength(String literal){
+        if(literal.startsWith("=c") || literal.startsWith("=C")){
+            //later
+            return "0";
+
+        }
+        else if(literal.startsWith("=x") || literal.startsWith("=X")){
+            //later
+            return "0";
+        }
+        else
+            return null;
     }
 }

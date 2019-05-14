@@ -25,7 +25,7 @@ public class Main /*extends Application*/ {
 
         //launch(args);
 
-        List<String> lines = FileManager.readFile();
+        /*List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
         List<ErrorRecord> errors = null;
 
