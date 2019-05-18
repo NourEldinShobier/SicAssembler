@@ -181,23 +181,38 @@ public abstract class InstructionIdentifier {
 
     }
 
-    private static void diagnoseLiterals(Instruction instruction){
-        if(instruction.segments[2].startsWith("=c") || instruction.segments[2].startsWith("=C") || instruction.segments[2].startsWith("=x") || instruction.segments[2].startsWith("=X") ){
-            LookupTables.literalTable.put(instruction.segments[2], calculateLiteralLength(instruction.segments[2]));
-        }
+    private static int calculateLiteralLength(String literal){
+        //case : (F20) = 1 byte or 2 bytes ?
+        String hexa = literalToHex(literal);
+        return(hexa.length() / 2);
 
     }
-    private static String calculateLiteralLength(String literal){
-        if(literal.startsWith("=c") || literal.startsWith("=C")){
-            //later
-            return "0";
+    private static String literalToHex (String literal){
 
+        if(literal.startsWith("=c") || literal.startsWith("=C")) {
+            StringBuilder builder = new StringBuilder();
+            literal = literal.substring(3, literal.length()-1);
+            char[] characters = literal.toCharArray();
+            for (char c : characters) {
+                int i = (int) c;
+                builder.append(Integer.toHexString(i).toUpperCase());
+            }
+            return builder.toString();
         }
-        else if(literal.startsWith("=x") || literal.startsWith("=X")){
-            //later
-            return "0";
+
+        else if(literal.startsWith("=w") || literal.startsWith("=W")){
+            literal = literal.substring(3,literal.length()-1);
+            int decimal =  (Integer.parseInt(literal));
+            return (Integer.toHexString(decimal));
         }
-        else
-            return null;
+        return (literal.substring(3, literal.length()-1));
+    }
+
+    private static boolean isDuplicateLiteral(String literal){
+        literal = literalToHex(literal);
+        //search litTab for =x'literal'
+        //if found return true;
+        return false;
+
     }
 }
