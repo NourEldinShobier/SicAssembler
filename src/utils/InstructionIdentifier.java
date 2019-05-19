@@ -2,11 +2,13 @@ package utils;
 
 import core.LookupTables;
 import core.Settings;
+import core.validators.ErrorController;
 import utils.Instruction.Instruction;
 import utils.Instruction.MnemonicFormat;
 import utils.InstructionsEncoders.FormatFOUREncoder;
 import utils.InstructionsEncoders.FormatTHREEEncoder;
 import utils.InstructionsEncoders.FormatTWOEncoder;
+import utils.errors.ErrorType;
 
 public abstract class InstructionIdentifier {
     private static int PC = -1;
@@ -181,6 +183,23 @@ public abstract class InstructionIdentifier {
 
     }
 
+    private static void diagnoseLiteral(String operand){
+        String address = "";
+        StringBuilder duplicate = new StringBuilder();
+        if(operand.startsWith("=c") ||
+                operand.startsWith("=C") ||
+                operand.startsWith("=x") ||
+                operand.startsWith("=X") ||
+                operand.startsWith("=w") ||
+                operand.startsWith("=W")){
+            duplicate.append("=X'");
+            duplicate.append(literalToHex(operand));
+            duplicate.append("'");
+            if(!LookupTables.literalTable.containsKey(operand ) && !LookupTables.literalTable.containsKey(duplicate)){
+                LookupTables.literalTable.put(operand, address);
+            }
+        }
+    }
     private static int calculateLiteralLength(String literal){
         //case : (F20) = 1 byte or 2 bytes ?
         String hexa = literalToHex(literal);

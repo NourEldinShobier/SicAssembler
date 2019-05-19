@@ -25,13 +25,6 @@ public class Main /*extends Application*/ {
 
         //launch(args);
 
-
-            String literal = "=c'15'";
-        literal = literal.substring(3,literal.length()-1);
-        int decimal =  (Integer.parseInt(literal));
-        System.out.println(Integer.toHexString(decimal));
-
-
        /* List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
         List<ErrorRecord> errors = null;

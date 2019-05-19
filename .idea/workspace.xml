@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/LookupTables.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/LookupTables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/LookupTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/LookupTables.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="31" column="57" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="31" selection-end-column="57" />
+            <state relative-caret-position="17">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="183" column="15" selection-start-line="183" selection-start-column="15" selection-end-line="183" selection-end-column="15" />
+            <state relative-caret-position="223">
+              <caret line="193" column="42" lean-forward="true" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="42" />
               <folding>
                 <element signature="method#identify#0;class#InstructionIdentifier#0" />
                 <element signature="e#661#727#1" />
@@ -61,8 +59,18 @@
                 <element signature="method#diagnoseWORD#0;class#InstructionIdentifier#0" />
                 <element signature="e#5552#5780#1" />
                 <element signature="e#5635#5732#1" />
-                <element signature="method#literalToHex#0;class#InstructionIdentifier#0" />
+                <element signature="method#diagnoseEQU#0;class#InstructionIdentifier#0" />
+                <element signature="method#isDuplicateLiteral#0;class#InstructionIdentifier#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -125,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,6 +175,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -221,7 +229,8 @@
       <workItem from="1557845702119" duration="4476000" />
       <workItem from="1557867038436" duration="2003000" />
       <workItem from="1558090261636" duration="2144000" />
-      <workItem from="1558186933225" duration="5085000" />
+      <workItem from="1558186933225" duration="5634000" />
+      <workItem from="1558269346529" duration="552000" />
     </task>
     <task id="LOCAL-00001" summary="Update Format4, Instruction identifier">
       <created>1557691417807</created>
@@ -244,17 +253,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557850145604</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="literals - second">
+      <created>1558197147429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558197147429</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39760000" />
+    <option name="totallyTimeSpent" value="40861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21633889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -264,7 +280,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24222586" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24222586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -325,7 +341,8 @@
     <MESSAGE value="Update Format4, Instruction identifier" />
     <MESSAGE value="added LitTab" />
     <MESSAGE value="Literal #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Literal #1" />
+    <MESSAGE value="literals - second" />
+    <option name="LAST_COMMIT_MESSAGE" value="literals - second" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -347,6 +364,14 @@
           <line>38</line>
           <properties />
           <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java</url>
+          <line>202</line>
+          <properties class="utils.InstructionIdentifier" method="calculateLiteralLength">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -445,13 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Segmentifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -528,6 +546,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -535,20 +563,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="31" column="57" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="31" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="382">
+          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-end-line="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="183" column="15" selection-start-line="183" selection-start-column="15" selection-end-line="183" selection-end-column="15" />
+        <state relative-caret-position="223">
+          <caret line="193" column="42" lean-forward="true" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="42" />
           <folding>
             <element signature="method#identify#0;class#InstructionIdentifier#0" />
             <element signature="e#661#727#1" />
@@ -572,7 +597,8 @@
             <element signature="method#diagnoseWORD#0;class#InstructionIdentifier#0" />
             <element signature="e#5552#5780#1" />
             <element signature="e#5635#5732#1" />
-            <element signature="method#literalToHex#0;class#InstructionIdentifier#0" />
+            <element signature="method#diagnoseEQU#0;class#InstructionIdentifier#0" />
+            <element signature="method#isDuplicateLiteral#0;class#InstructionIdentifier#0" />
           </folding>
         </state>
       </provider>
