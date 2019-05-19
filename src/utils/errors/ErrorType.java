@@ -5,7 +5,7 @@ public class ErrorType {
     public static Error MissingMisplacedOperation = new MissingMisplacedOperation();
     public static Error MissingMisplacedOperand = new MissingMisplacedOperand();
     public static Error DuplicateLabel = new DuplicateLabel();
-    public حstatic Error StatementCannotHaveLabel = new StatementCannotHaveLabel();
+    public static Error StatementCannotHaveLabel = new StatementCannotHaveLabel();
     public static Error StatementCannotHaveOperand = new StatementCannotHaveOperand();
     public static Error WrongPrefix = new WrongPrefix();
     public static Error UnrecognizedOperation = new UnrecognizedOperation();

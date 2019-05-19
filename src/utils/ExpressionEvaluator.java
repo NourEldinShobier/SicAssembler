@@ -11,30 +11,35 @@ import javax.script.ScriptException;
 
 public class ExpressionEvaluator {
 
-    private static int ERROR = -1;
+    private static String ERROR = null;
 
-    public static int evaluate (String expression, int lineNumber) {
+    public static String evaluate (String expression, int lineNumber, String pc) {
 
         /** debug */
         //LookupTables.setSymbolTable();
 
         /** segmentify expression*/
-        String[] exps  =expression.split("(?<=\\+)|(?=\\+)|(?<=\\-)|(?=\\-)|(?<=\\*)|(?=\\*)|(?<=\\/)|(?=\\/)|(?<=\\))|(?=\\))|(?<=\\()|(?=\\()");
+        //(?<=\*)|(?=\*)|(?<=\/)|(?=\/)|
+        String[] exps  = expression.split("(?<=\\+)|(?=\\+)|(?<=\\-)|(?=\\-)|(?<=\\))|(?=\\))|(?<=\\()|(?=\\()");
 
         /** search symtab for label */
         for(String label : exps)
         {
             String trimmed = label.trim();
-            if(validateDec(trimmed)|| trimmed.equals(")") || trimmed.equals("(") || trimmed.equals("+") || trimmed.equals("-") || trimmed.equals("*") || trimmed.equals("/") || trimmed.equals("^") || trimmed.equals("%"))
+            if(validateDec(trimmed)|| trimmed.equals(")") || trimmed.equals("(") || trimmed.equals("+") || trimmed.equals("-") || trimmed.equals("^") || trimmed.equals("%"))
                 continue;
-            if(!LookupTables.symbolTable.containsKey(trimmed)){
+            if(trimmed.equals("*")) {
+                pc = Integer.toString(Integer.parseInt(pc,16));
+                expression = expression.replaceFirst("\\*", pc);
+            }
+            else if(!LookupTables.symbolTable.containsKey(trimmed)){
                 ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
                 return ERROR;
             }
             else
             {
                 /** replace labels by addresses*/
-                expression = expression.replaceFirst(label, LookupTables.symbolTable.get(trimmed));
+                expression = expression.replaceFirst(label, Integer.toString(Integer.parseInt(LookupTables.symbolTable.get(trimmed), 16)));
             }
         }
 
@@ -48,7 +53,7 @@ public class ExpressionEvaluator {
             e.printStackTrace();
         }
         //System.out.println(result);
-        return (int) result;
+        return  Integer.toHexString((int)result);
     }
 
     public static boolean validateDec(String str) {

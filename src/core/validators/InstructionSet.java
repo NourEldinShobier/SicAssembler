@@ -49,6 +49,7 @@ public class InstructionSet {
             new InstructionFormat("resb" , false ,true,false, true ,false,true,false,false,true),
             new InstructionFormat("equ" , false ,true,false, true,true,false,false,true,true ),
             new InstructionFormat("org" , false ,true,false, false, false,true,false,false,false),
+            new InstructionFormat("ltorg" , false ,true,false, false, false,true,false,false,false),
             new InstructionFormat("base" , false , true )
     };
     //29 elemnts

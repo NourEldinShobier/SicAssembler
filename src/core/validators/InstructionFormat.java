@@ -10,7 +10,7 @@ public class InstructionFormat {
     private boolean format34 = false;
     private boolean oneOperand = false;
     private boolean twoOperands = false;
-    private boolean listOperand = false;
+    private boolean listOperand;
     private boolean isDirective = false;
     private boolean canHaveLabel = true;
     private boolean mustHaveLabel = false;
@@ -133,14 +133,13 @@ public class InstructionFormat {
         // if 1 operand
         if(operands.length == 1) {
             //if hexa literal validate
-            if(operand.length() > 4 && operand.substring(0,2).toLowerCase().equals("x'") && operands[0].substring(operands[0].length()-1).equals("'"))
+            if(operand.length() > 4 && operand.substring(0,3).toLowerCase().equals("=x'") && operands[0].substring(operands[0].length()-1).equals("'"))
                 return validateHexa(lineNumber, operands[0].substring(3, operand.length()-1));
             else
                 return true;
         }
         // if 2 operands >> second one must be index register x
-        if(operands.length == 2 && operands[1].toLowerCase() == "x") return true;
-        return false;
+        return operands.length == 2 && operands[1].toLowerCase().equals("x");
     }
 
     public boolean validateDirective(int lineNumber, String operand) {
