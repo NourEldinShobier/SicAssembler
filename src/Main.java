@@ -7,6 +7,8 @@ import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
 import utils.InstructionsEncoders.FormatFOUREncoder;
+import utils.ListFileManager;
+import utils.OBJFileManager;
 import utils.errors.ErrorRecord;
 import utils.errors.ErrorType;
 
@@ -22,9 +24,7 @@ public class Main /*extends Application*/ {
 
     public static void main(String[] args) {
 
-        //launch(args);
-
-       /* List<String> lines = FileManager.readFile();
+        List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
         List<ErrorRecord> errors = null;
 
@@ -55,46 +55,15 @@ public class Main /*extends Application*/ {
             }
         }
 
-        if (errors.size() == 0) {
-            InstructionIdentifier.PASS = 2;
+        InstructionIdentifier.PASS = 2;
 
-            for (int i = 0; i < instructions.size(); i++) {
-                Instruction temp = instructions.get(i);
-                temp = InstructionIdentifier.identify(temp);
-                instructions.set(i, temp);
-            }
-
-            InstructionManager.generateListFile(instructions);
-            InstructionManager.generateOBJFile(instructions);
-            InstructionManager.printSymbolTable();
+        for (int i = 0; i < instructions.size(); i++) {
+            Instruction temp = instructions.get(i);
+            temp = InstructionIdentifier.identify(temp);
+            instructions.set(i, temp);
         }
 
-
-        /*ExpressionEvaluator e = new ExpressionEvaluator();
-        System.out.println(e.evaluate("GAMMA+BETA - 10 * 9", 0));*/
-
-
-       /* Instruction instruction = new Instruction();
-        instruction.segments = new String[3];
-        instruction.segments[0] = "";
-        instruction.segments[1] = "+ADD";
-        instruction.segments[2] = "#1000";
-        instruction = FormatFOUREncoder.encode(instruction);
-        System.out.println(instruction.opCode);*/
-
-        /////////////
-        // Testing //
-        /////////////
-
-        // Call to push an error
-        /*ErrorController.getInstance().pushError("1000", ErrorType.IllegalRegisterAddress);
-        ErrorController.getInstance().pushError("1003", ErrorType.CannotBeFormatFour);
-        // Get a list of all errorRecords
-        ErrorController.getInstance().getErrorsList().forEach(errorRecord -> System.out.println(errorRecord.getErrorMsg()));
-        // Get the last errorMsg
-        System.out.println(ErrorController.getInstance().getLastError().getErrorMsg());
-        // Get the last errorAddress
-        System.out.println(ErrorController.getInstance().getLastError().getAddress());*/
-
+        ListFileManager.printSymbolTable();
+        OBJFileManager.generateOBJFile(instructions);
     }
 }
