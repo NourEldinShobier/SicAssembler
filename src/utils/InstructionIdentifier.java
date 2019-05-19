@@ -1,5 +1,6 @@
 package utils;
 
+import core.Literal;
 import core.LookupTables;
 import core.Settings;
 import core.validators.ErrorController;
@@ -183,55 +184,13 @@ public abstract class InstructionIdentifier {
 
     }
 
-    private static void diagnoseLiteral(String operand){
-        String address = "";
-        StringBuilder duplicate = new StringBuilder();
-        if(operand.startsWith("=c") ||
-                operand.startsWith("=C") ||
-                operand.startsWith("=x") ||
-                operand.startsWith("=X") ||
-                operand.startsWith("=w") ||
-                operand.startsWith("=W")){
-            duplicate.append("=X'");
-            duplicate.append(literalToHex(operand));
-            duplicate.append("'");
-            if(!LookupTables.literalTable.containsKey(operand ) && !LookupTables.literalTable.containsKey(duplicate)){
-                LookupTables.literalTable.put(operand, address);
+    private static void diagnoseLiteral(Literal literal){
+
+        String duplicate = Literal.getHexValue();
+        Literal.literalToHex();
+            if(!LookupTables.literalTable.contains(literal) && !LookupTables.literalTable.contains(duplicate)){
+                LookupTables.literalTable.add(literal);
             }
         }
-    }
-    private static int calculateLiteralLength(String literal){
-        //case : (F20) = 1 byte or 2 bytes ?
-        String hexa = literalToHex(literal);
-        return(hexa.length() / 2);
 
-    }
-    private static String literalToHex (String literal){
-
-        if(literal.startsWith("=c") || literal.startsWith("=C")) {
-            StringBuilder builder = new StringBuilder();
-            literal = literal.substring(3, literal.length()-1);
-            char[] characters = literal.toCharArray();
-            for (char c : characters) {
-                int i = (int) c;
-                builder.append(Integer.toHexString(i).toUpperCase());
-            }
-            return builder.toString();
-        }
-
-        else if(literal.startsWith("=w") || literal.startsWith("=W")){
-            literal = literal.substring(3,literal.length()-1);
-            int decimal =  (Integer.parseInt(literal));
-            return (Integer.toHexString(decimal));
-        }
-        return (literal.substring(3, literal.length()-1));
-    }
-
-    private static boolean isDuplicateLiteral(String literal){
-        literal = literalToHex(literal);
-        //search litTab for =x'literal'
-        //if found return true;
-        return false;
-
-    }
 }
