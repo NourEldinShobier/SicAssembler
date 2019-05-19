@@ -1,12 +1,13 @@
 package utils;
 
+import core.Literal;
 import core.LookupTables;
 import core.Settings;
+import core.validators.ErrorController;
 import utils.Instruction.Instruction;
 import utils.Instruction.MnemonicFormat;
-import utils.InstructionsEncoders.FormatFOUREncoder;
-import utils.InstructionsEncoders.FormatTHREEEncoder;
-import utils.InstructionsEncoders.FormatTWOEncoder;
+import utils.InstructionsEncoders.*;
+import utils.errors.ErrorType;
 
 public abstract class InstructionIdentifier {
     private static int PC = -1;
@@ -25,10 +26,13 @@ public abstract class InstructionIdentifier {
     }
 
     private static Instruction PassTWOIdentification(Instruction instruction) {
-        if (instruction.segments[1].equals("EQU")) {
-            diagnoseEQU(instruction);
-            return instruction;
-        }
+        if (instruction.segments[1].equals("EQU")) diagnoseEQU(instruction);
+
+        if (instruction.isDirective && instruction.segments[1].equals("WORD"))
+            return WordEncoder.encode(instruction);
+
+        if (instruction.isDirective && instruction.segments[1].equals("BYTE"))
+            return BYTEEncoder.encode(instruction);
 
         if (!instruction.isDirective && !instruction.isStartEnd) {
             if (instruction.mnemonic.format == MnemonicFormat.TWO)
@@ -100,6 +104,10 @@ public abstract class InstructionIdentifier {
                 case "ORG":
                     instruction.memoryLocation = Integer.toHexString(PC);
                     PC = Integer.parseInt(instruction.segments[2]);
+                    break;
+                case "LTORG":
+                    Settings.ltorg = instruction.segments[2];
+                    instruction.memoryLocation = Integer.toHexString(PC);
                     break;
                 case "EQU":
                     instruction.memoryLocation = Integer.toHexString(PC);
@@ -178,5 +186,16 @@ public abstract class InstructionIdentifier {
 
         String memoryLocation = LookupTables.symbolTable.get(instruction.segments[2]);
         LookupTables.symbolTable.put(instruction.segments[0], memoryLocation);
+
     }
+    private static void diagnoseLiteral(Literal literal){
+
+        String duplicate = "=X'";
+        Literal.literalToHex();
+        duplicate = duplicate + (Literal.getHexValue());
+        duplicate = duplicate +"'";
+            if(!LookupTables.literalTable.contains(literal) && !LookupTables.literalTable.contains(duplicate)){
+                LookupTables.literalTable.add(literal);
+            }
+        }
 }

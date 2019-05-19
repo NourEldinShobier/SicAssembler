@@ -8,6 +8,9 @@ import utils.Instruction.MnemonicFormat;
 
 public class FormatTWOEncoder {
     public static Instruction encode(Instruction instruction){
+
+        if (instruction.segments[1].equals("TIXR")) return diagnoseTIXR(instruction);
+
         instruction.mnemonic = diagnoseMnemonic(instruction.segments[1]);
 
         String registers = diagnoseRegisters(instruction.segments[2]);
@@ -54,5 +57,25 @@ public class FormatTWOEncoder {
         while (stringBuilder.length() < 8) stringBuilder.insert(0, "0");
 
         return stringBuilder.toString();
+    }
+
+    private static Instruction diagnoseTIXR(Instruction instruction){
+        instruction.mnemonic.format = MnemonicFormat.TWO;
+        instruction.mnemonic.name = "TIXR";
+        instruction.mnemonic.opCode = "B8";
+
+        String opCode = standardOpCode(instruction.mnemonic.opCode);
+        String registers = Registers.get(instruction.segments[2]) + Registers.get("X");
+
+        String binOpCode = opCode + registers;
+        String HEXOpCode = Integer.toString(Integer.parseInt(binOpCode, 2), 16);
+
+        // Standard Opcode
+        StringBuilder stringBuilder = new StringBuilder(HEXOpCode);
+        while (stringBuilder.length() < 4) stringBuilder.insert(0, "0");
+
+        instruction.opCode = stringBuilder.toString().toUpperCase();
+
+        return instruction;
     }
 }
