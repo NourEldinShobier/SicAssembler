@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
@@ -66,6 +63,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/core/Literal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,6 +91,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -116,6 +129,7 @@
         <option value="$PROJECT_DIR$/src/core/LookupTables.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
+        <option value="$PROJECT_DIR$/src/core/Literal.java" />
       </list>
     </option>
   </component>
@@ -230,7 +244,7 @@
       <workItem from="1557867038436" duration="2003000" />
       <workItem from="1558090261636" duration="2144000" />
       <workItem from="1558186933225" duration="5634000" />
-      <workItem from="1558269346529" duration="552000" />
+      <workItem from="1558269346529" duration="1242000" />
     </task>
     <task id="LOCAL-00001" summary="Update Format4, Instruction identifier">
       <created>1557691417807</created>
@@ -260,11 +274,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558197147429</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added literals to litTab">
+      <created>1558270098740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558270098740</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40861000" />
+    <option name="totallyTimeSpent" value="41551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -342,7 +363,8 @@
     <MESSAGE value="added LitTab" />
     <MESSAGE value="Literal #1" />
     <MESSAGE value="literals - second" />
-    <option name="LAST_COMMIT_MESSAGE" value="literals - second" />
+    <MESSAGE value="added literals to litTab" />
+    <option name="LAST_COMMIT_MESSAGE" value="added literals to litTab" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -600,6 +622,13 @@
             <element signature="method#diagnoseEQU#0;class#InstructionIdentifier#0" />
             <element signature="method#isDuplicateLiteral#0;class#InstructionIdentifier#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Literal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
         </state>
       </provider>
     </entry>
