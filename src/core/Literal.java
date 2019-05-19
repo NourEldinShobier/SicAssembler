@@ -3,8 +3,15 @@ package core;
 public class Literal {
     private static String hexValue = "";
     private static String MemoryValue = "";
-    public static String literal ="";
+    public static String literal ="=x'05'";
     private static int length;
+
+    /*public Literal() {
+        System.out.println(literal.startsWith("=c'"));
+        literalToHex();
+        getHexValue();
+
+    }*/
 
     public static String getHexValue() {
         return hexValue;
@@ -25,7 +32,7 @@ public class Literal {
             literal = literal.substring(3, literal.length()-1);
             int len = literal.length();
             if(len < 3){
-                builder.append(zeroes.substring(0, 5 - (2 * len)));
+                builder.append(zeroes.substring(0, 6 - (2 * len)));
             }
             char[] characters = literal.toCharArray();
             for (char c : characters) {
@@ -34,6 +41,7 @@ public class Literal {
             }
             hexValue.concat(builder.toString());
             System.out.println(builder.toString());
+            return;
         }
 
         else if(literal.startsWith("=w") || literal.startsWith("=W")){
@@ -42,17 +50,13 @@ public class Literal {
             hexaLiteral = Integer.toHexString(decimal);
             int len = (hexaLiteral).length();
             if(len < 6){
-                builder.append(zeroes.substring(0, 5 - len ));
-                builder.append(hexaLiteral);
+                builder.append(zeroes.substring(0, 6 - len));
             }
-            hexValue.concat(builder.toString());
+            builder.append(hexaLiteral);
+            hexValue = builder.toString();
+            return;
         }
 
-        hexValue.concat(literal.substring(3, literal.length()-1));
-    }
-
-    private static boolean isDuplicateLiteral(String literal){
-        return false;
-
+        hexValue = (literal.substring(3, literal.length()-1));
     }
 }
