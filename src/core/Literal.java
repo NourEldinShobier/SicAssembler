@@ -3,15 +3,26 @@ package core;
 public class Literal {
     private static String hexValue = "";
     private static String MemoryValue = "";
-    public static String literal ="=x'05'";
-    private static int length;
+    public static String literal ="";
+    private static int bytes;
 
-    /*public Literal() {
-        System.out.println(literal.startsWith("=c'"));
-        literalToHex();
-        getHexValue();
+    public Literal(String value, String address) {
+        Literal.setMemoryValue(address);
+        Literal.setLiteral(value);
 
-    }*/
+    }
+
+    public static void setLiteral(String literal) {
+        Literal.literal = literal;
+    }
+
+    public static String getLiteral() {
+        return literal;
+    }
+
+    public static void setMemoryValue(String memoryValue) {
+        MemoryValue = memoryValue;
+    }
 
     public static String getHexValue() {
         return hexValue;
@@ -19,8 +30,8 @@ public class Literal {
 
     public static void calculateLiteralLength(){
         if(literal.startsWith("=x") || literal.startsWith("=X"))
-            length = (literal.length() - 4);
-        length = (6);
+            bytes = (literal.length() - 4);
+        bytes = (3);
     }
 
     public static void literalToHex (){
