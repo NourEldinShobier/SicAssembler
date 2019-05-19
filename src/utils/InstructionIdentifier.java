@@ -188,5 +188,4 @@ public abstract class InstructionIdentifier {
         LookupTables.symbolTable.put(instruction.segments[0], memoryLocation);
 
     }
-
 }

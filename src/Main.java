@@ -1,25 +1,21 @@
 import core.FileManager;
 import core.Segmentifier;
-import core.Settings;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
-import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
-import utils.InstructionsEncoders.FormatFOUREncoder;
 import utils.ListFileManager;
 import utils.OBJFileManager;
 import utils.errors.ErrorRecord;
-import utils.errors.ErrorType;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Main /*extends Application*/ {
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\033[0;32m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_GREEN = "\033[0;32m";
 
 
     public static void main(String[] args) {
@@ -29,6 +25,7 @@ public class Main /*extends Application*/ {
         List<ErrorRecord> errors = null;
 
         InstructionIdentifier.PASS = 1;
+        ListFileManager.printListFileHeader();
 
         assert lines != null;
 
@@ -42,6 +39,9 @@ public class Main /*extends Application*/ {
 
                     if (!ErrorController.getInstance().foundErrors(instruction.lineNumber)) {
                         instruction = validatedInstruction;
+
+                        assert instruction != null;
+
                         if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                         instructions.add(instruction);
                     }
@@ -49,9 +49,14 @@ public class Main /*extends Application*/ {
                     SegmentsValidator.checkEndStatement(i == lines.size() - 1);
                     errors = ErrorController.getInstance().getErrorList(instruction.lineNumber);
 
+                    ListFileManager.printLine(instruction);
                     System.out.println((errors.size() == 0 ? ANSI_GREEN : ANSI_RED) + instruction.line + ANSI_RESET);
-                    errors.forEach(error -> System.out.println(error.getErrorMsg()));
+                    errors.forEach(error -> {
+                        System.out.println(error.getErrorMsg());
+                        ListFileManager.printError(error.getErrorMsg());
+                    });
                 }
+                else if (instruction.isComment) ListFileManager.printComment(instruction.line);
             }
         }
 
