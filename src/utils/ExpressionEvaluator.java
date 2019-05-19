@@ -13,7 +13,7 @@ public class ExpressionEvaluator {
 
     private static String ERROR = null;
 
-    public static String evaluate (String expression, int lineNumber, String pc) {
+    public static String evaluate (String expression, int lineNumber, boolean isFormat4) {
 
         /** debug */
         //LookupTables.setSymbolTable();
@@ -29,8 +29,7 @@ public class ExpressionEvaluator {
             if(validateDec(trimmed)|| trimmed.equals(")") || trimmed.equals("(") || trimmed.equals("+") || trimmed.equals("-") || trimmed.equals("^") || trimmed.equals("%"))
                 continue;
             if(trimmed.equals("*")) {
-                pc = Integer.toString(Integer.parseInt(pc,16));
-                expression = expression.replaceFirst("\\*", pc);
+                expression = expression.replaceFirst("\\*", "-3");
             }
             else if(!LookupTables.symbolTable.containsKey(trimmed)){
                 ErrorController.getInstance().pushError(lineNumber, ErrorType.UndefinedSymbol);
@@ -53,7 +52,13 @@ public class ExpressionEvaluator {
             e.printStackTrace();
         }
         //System.out.println(result);
-        return  Integer.toHexString((int)result);
+
+        String res = Integer.toBinaryString((int)result);
+        if (res.length() > (isFormat4 ? 20 : 12))
+            res = res.substring(res.length() - (isFormat4 ? 20 : 12));
+
+        //return Integer.toHexString(Integer.parseInt(res,2));
+        return res;
     }
 
     public static boolean validateDec(String str) {
