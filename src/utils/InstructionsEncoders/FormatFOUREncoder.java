@@ -2,6 +2,8 @@ package utils.InstructionsEncoders;
 
 import core.InstructionSet;
 import core.LookupTables;
+import core.Settings;
+import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.Instruction.Mnemonic;
 import utils.Instruction.MnemonicFormat;
@@ -11,9 +13,9 @@ public class FormatFOUREncoder {
         instruction.mnemonic = diagnoseMnemonic(instruction.segments[1]);
 
         String nixbpe = diagnoseNIXBPE(instruction.segments[2]);
-        String address = diagnoseAddress(instruction.segments[2]);
+        String operand = diagnoseOperandType(instruction.segments[2], instruction.lineNumber);
 
-        String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + standardAddress(address);
+        String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + operand;
         String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
 
         // Standard Opcode
@@ -78,6 +80,21 @@ public class FormatFOUREncoder {
         return getBinAddressFromNum_LABEL(operand);
     }
 
+    private static String diagnoseOperandType(String operand, int lineNumber) {
+        boolean isLiteral = operand.startsWith("=");
+        boolean isExpression = operand.contains("+")
+                || operand.contains("-")
+                || operand.contains("/")
+                || operand.contains("*");
+
+        if (isExpression) operand = ExpressionEvaluator.evaluate(operand, lineNumber, true);
+        else if (isLiteral) {
+            // Call Literal Evaluator
+        } else operand = standardAddress(diagnoseAddress(operand));
+
+        return operand;
+    }
+
     private static String getBinAddressFromNum_LABEL(String operand) {
         boolean isDecimal = operand.matches("\\d*\\.?\\d+");
 
@@ -109,7 +126,7 @@ public class FormatFOUREncoder {
 
         String totalBinary = nibbleONEBuilder.toString() + nibbleTWOBuilder.toString();
 
-        return totalBinary.substring(0,6);
+        return totalBinary.substring(0, 6);
     }
 
     private static String standardAddress(String address) {

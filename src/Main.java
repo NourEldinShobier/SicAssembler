@@ -4,6 +4,7 @@ import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
+import utils.InstructionsEncoders.FormatTHREEEncoder;
 import utils.ListFileManager;
 import utils.OBJFileManager;
 import utils.errors.ErrorRecord;
@@ -70,5 +71,6 @@ public class Main /*extends Application*/ {
 
         ListFileManager.printSymbolTable();
         OBJFileManager.generateOBJFile(instructions);
+
     }
 }

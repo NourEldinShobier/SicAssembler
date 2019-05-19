@@ -4,7 +4,7 @@ import utils.Instruction.Instruction;
 
 import java.util.Arrays;
 
-public class WordEncoder {
+public class WORDEncoder {
     public static Instruction encode(Instruction instruction){
         String [] nums = instruction.segments[2].split(",");
 
