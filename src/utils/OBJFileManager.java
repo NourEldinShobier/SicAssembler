@@ -81,7 +81,7 @@ public class OBJFileManager {
 
     private static void extractInstructionsOpCodes(List<Instruction> instructions) {
         for (Instruction instruction : instructions) {
-            Boolean expression = instruction.mnemonic.format == MnemonicFormat.TWO ||
+            boolean expression = instruction.mnemonic.format == MnemonicFormat.TWO ||
                     instruction.mnemonic.format == MnemonicFormat.FOUR ||
                     (instruction.isDirective && instruction.segments[1].equals("WORD"));
 

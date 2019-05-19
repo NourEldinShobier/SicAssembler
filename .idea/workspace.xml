@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="Add ListFileManager, OBJFileManager, WordEncoder, HotFixes">
-      <change afterPath="$PROJECT_DIR$/src/utils/InstructionsEncoders/WordEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/OBJFileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionsEncoders/FormatTWOEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionsEncoders/FormatTWOEncoder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InstructionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ListFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTWOEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTWOEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/OBJFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/OBJFileManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,16 +21,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/OBJFileManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="118" column="53" selection-start-line="118" selection-start-column="53" selection-end-line="118" selection-end-column="53" />
+            <state relative-caret-position="390">
+              <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#printHeader#0;class#OBJFileManager#0" />
                 <element signature="method#printEnd#0;class#OBJFileManager#0" />
-                <element signature="method#diagnoseAllOpCodes#0;class#OBJFileManager#0" />
                 <element signature="method#concatAllOpCodes#0;class#OBJFileManager#0" />
               </folding>
             </state>
@@ -47,6 +41,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="431">
               <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,9 +86,9 @@
         <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/WordEncoder.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
         <option value="$PROJECT_DIR$/src/core/Settings.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/utils/ListFileManager.java" />
         <option value="$PROJECT_DIR$/src/utils/OBJFileManager.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -183,7 +189,7 @@
       <workItem from="1557961598381" duration="188000" />
       <workItem from="1558003228364" duration="1435000" />
       <workItem from="1558212409864" duration="10904000" />
-      <workItem from="1558262907776" duration="4424000" />
+      <workItem from="1558262907776" duration="4579000" />
     </task>
     <task id="LOCAL-00001" summary="Update Format4, Instruction identifier">
       <created>1557691417807</created>
@@ -206,11 +212,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557765552329</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add ListFileManager, OBJFileManager, WordEncoder, HotFixes">
+      <created>1558267368291</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558267368291</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60090000" />
+    <option name="totallyTimeSpent" value="60245000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -530,16 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
@@ -549,14 +552,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/OBJFileManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="118" column="53" selection-start-line="118" selection-start-column="53" selection-end-line="118" selection-end-column="53" />
+        <state relative-caret-position="390">
+          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printHeader#0;class#OBJFileManager#0" />
             <element signature="method#printEnd#0;class#OBJFileManager#0" />
-            <element signature="method#diagnoseAllOpCodes#0;class#OBJFileManager#0" />
             <element signature="method#concatAllOpCodes#0;class#OBJFileManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

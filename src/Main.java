@@ -13,16 +13,16 @@ import java.util.List;
 
 
 public class Main /*extends Application*/ {
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\033[0;32m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_GREEN = "\033[0;32m";
 
 
     public static void main(String[] args) {
 
         List<String> lines = FileManager.readFile();
         List<Instruction> instructions = new ArrayList<>();
-        List<ErrorRecord> errors = null;
+        List<ErrorRecord> errors;
 
         InstructionIdentifier.PASS = 1;
         ListFileManager.printListFileHeader();
@@ -39,6 +39,9 @@ public class Main /*extends Application*/ {
 
                     if (!ErrorController.getInstance().foundErrors(instruction.lineNumber)) {
                         instruction = validatedInstruction;
+
+                        assert instruction != null;
+
                         if (!instruction.isComment) instruction = InstructionIdentifier.identify(instruction);
                         instructions.add(instruction);
                     }
