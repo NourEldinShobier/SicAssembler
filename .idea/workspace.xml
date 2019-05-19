@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="Add ListFileManager, OBJFileManager, WordEncoder, HotFixes">
+    <list default="true" id="66c3b71f-ad7c-4caf-abab-6648bf8fb014" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionsEncoders/FormatTWOEncoder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionsEncoders/FormatTWOEncoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/core/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/core/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionIdentifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SicAssembler/utils/InstructionManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/OBJFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/OBJFileManager.java" afterDir="false" />
     </list>
@@ -21,35 +23,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/OBJFileManager.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+            <state relative-caret-position="908">
+              <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#printHeader#0;class#OBJFileManager#0" />
-                <element signature="method#printEnd#0;class#OBJFileManager#0" />
-                <element signature="method#concatAllOpCodes#0;class#OBJFileManager#0" />
+                <element signature="method#identify#0;class#InstructionIdentifier#0" />
+                <element signature="method#PassTWOIdentification#0;class#InstructionIdentifier#0" />
+                <element signature="method#PassONEIdentification#0;class#InstructionIdentifier#0" />
+                <element signature="method#diagnoseLabel#0;class#InstructionIdentifier#0" />
+                <element signature="method#diagnoseLength#0;class#InstructionIdentifier#0" />
+                <element signature="method#diagnoseBYTE#0;class#InstructionIdentifier#0" />
+                <element signature="method#diagnoseWORD#0;class#InstructionIdentifier#0" />
+                <element signature="method#literalToHex#0;class#InstructionIdentifier#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+            <state relative-caret-position="281">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,36 +56,38 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>trimmed</find>
       <find>==</find>
       <find>System.out.println</find>
+      <find>symbolTable</find>
+      <find>&quot;=</find>
+      <find>regex_Literals</find>
+      <find>symbolTa</find>
+      <find>symbolT</find>
+      <find>println</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/utils/ExpressionEvaluator.java" />
-        <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java" />
-        <option value="$PROJECT_DIR$/src/utils/InstructionManager.java" />
         <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTWOEncoder.java" />
-        <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/WordEncoder.java" />
-        <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
         <option value="$PROJECT_DIR$/src/core/Settings.java" />
-        <option value="$PROJECT_DIR$/src/utils/ListFileManager.java" />
-        <option value="$PROJECT_DIR$/src/utils/OBJFileManager.java" />
+        <option value="$PROJECT_DIR$/src/core/Segmentifier.java" />
+        <option value="$PROJECT_DIR$/src/utils/InstructionManager.java" />
+        <option value="$PROJECT_DIR$/src/core/LookupTables.java" />
+        <option value="$PROJECT_DIR$/src/utils/InstructionIdentifier.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/utils/OBJFileManager.java" />
+        <option value="$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java" />
       </list>
     </option>
   </component>
@@ -143,6 +142,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -182,14 +182,12 @@
       <workItem from="1557673761950" duration="23588000" />
       <workItem from="1557735208386" duration="31000" />
       <workItem from="1557744964745" duration="878000" />
-      <workItem from="1557756528745" duration="5979000" />
-      <workItem from="1557765485901" duration="9221000" />
-      <workItem from="1557801949901" duration="322000" />
-      <workItem from="1557818055085" duration="3120000" />
-      <workItem from="1557961598381" duration="188000" />
-      <workItem from="1558003228364" duration="1435000" />
-      <workItem from="1558212409864" duration="10904000" />
-      <workItem from="1558262907776" duration="4579000" />
+      <workItem from="1557756528745" duration="942000" />
+      <workItem from="1557764816521" duration="613000" />
+      <workItem from="1557845702119" duration="4476000" />
+      <workItem from="1557867038436" duration="2003000" />
+      <workItem from="1558090261636" duration="2144000" />
+      <workItem from="1558186933225" duration="5085000" />
     </task>
     <task id="LOCAL-00001" summary="Update Format4, Instruction identifier">
       <created>1557691417807</created>
@@ -198,32 +196,25 @@
       <option name="project" value="LOCAL" />
       <updated>1557691417807</updated>
     </task>
-    <task id="LOCAL-00002" summary="many changes =D">
-      <created>1557757568978</created>
+    <task id="LOCAL-00002" summary="added LitTab">
+      <created>1557846523022</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1557757568978</updated>
+      <updated>1557846523022</updated>
     </task>
-    <task id="LOCAL-00003" summary="Update ListFile">
-      <created>1557765552329</created>
+    <task id="LOCAL-00003" summary="Literal #1">
+      <created>1557850145604</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1557765552329</updated>
+      <updated>1557850145604</updated>
     </task>
-    <task id="LOCAL-00004" summary="Add ListFileManager, OBJFileManager, WordEncoder, HotFixes">
-      <created>1558267368291</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1558267368291</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60245000" />
+    <option name="totallyTimeSpent" value="46219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -239,15 +230,15 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19413407" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27234638" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32569557" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3282123" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3282123" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32569557" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
@@ -298,10 +289,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Format4, Instruction identifier" />
-    <MESSAGE value="many changes =D" />
-    <MESSAGE value="Update ListFile" />
-    <MESSAGE value="Add ListFileManager, OBJFileManager, WordEncoder, HotFixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ListFileManager, OBJFileManager, WordEncoder, HotFixes" />
+    <MESSAGE value="added LitTab" />
+    <MESSAGE value="Literal #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Literal #1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,6 +307,12 @@
           <line>41</line>
           <properties />
           <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/utils/FormatIdentifier.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -342,73 +338,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/UndefinedCharsInOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTHREEEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/validators/ErrorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/instruction_validators/InstructionValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/validators/InstructionFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="148" column="51" lean-forward="true" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="51" />
+        <state relative-caret-position="149">
+          <caret line="190" column="4" selection-start-line="190" selection-start-column="4" selection-end-line="198" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/ErrorRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/errors/ErrorType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -419,6 +355,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/instruction_validators/InstructionValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/errors/UndefinedCharsInOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTHREEEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/instruction_format/FixedFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Segmentifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="73" column="74" selection-start-line="73" selection-start-column="74" selection-end-line="73" selection-end-column="74" />
+          <folding>
+            <element signature="method#segmentify#0;class#Segmentifier#0" />
+            <element signature="e#1212#1531#0" />
+            <element signature="e#1770#1886#1" />
+            <element signature="e#2638#2753#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/validators/SegmentsValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="method#setInstruction#0;class#SegmentsValidator#0" />
+            <element signature="method#validate#0;class#SegmentsValidator#0" />
+            <element signature="method#validateOpcode#0;class#SegmentsValidator#0" />
+            <element signature="e#2088#2169#1" />
+            <element signature="e#2479#2669#1" />
+            <element signature="method#validateLabel#0;class#SegmentsValidator#0" />
+            <element signature="e#3240#3414#1" />
+            <element signature="e#3420#3573#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/FormatIdentifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding>
+            <element signature="method#identify#0;class#FormatIdentifier#0" />
+            <element signature="method#isStartEnd#0;class#FormatIdentifier#0" />
+            <element signature="method#isDirective#0;class#FormatIdentifier#0" />
+            <element signature="method#diagnoseFormat#0;class#FormatIdentifier#0" />
+            <element signature="e#1319#1425#1" />
+            <element signature="e#1495#1688#1" />
+            <element signature="e#1558#1678#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionManager.java" />
+    <entry file="file://$PROJECT_DIR$/src/utils/Instruction/Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="70" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/LookupTables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/InstructionSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/OBJFileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="53" column="85" lean-forward="true" selection-start-line="53" selection-start-column="85" selection-end-line="53" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#generateOBJFile#0;class#OBJFileManager#0" />
+            <element signature="method#printHeader#0;class#OBJFileManager#0" />
+            <element signature="method#printEnd#0;class#OBJFileManager#0" />
+            <element signature="method#extractInstructionsOpCodes#0;class#OBJFileManager#0" />
+            <element signature="method#concatAllOpCodes#0;class#OBJFileManager#0" />
+            <element signature="method#hexLength#0;class#OBJFileManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#diagnoseNIXBPE#0;class#FormatFOUREncoder#0" />
+            <element signature="method#diagnoseAddress#0;class#FormatFOUREncoder#0" />
+            <element signature="method#getBinAddressFromNum_LABEL#0;class#FormatFOUREncoder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Registers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -426,149 +494,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Segmentifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding>
-            <element signature="e#804#812#0" expanded="true" />
-            <element signature="e#864#872#0" expanded="true" />
-            <element signature="e#924#932#0" expanded="true" />
-            <element signature="e#984#992#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/InstructionSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatFOUREncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="81" column="3" lean-forward="true" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#diagnoseMnemonic#0;class#FormatFOUREncoder#0" />
-            <element signature="method#diagnoseNIXBPE#0;class#FormatFOUREncoder#0" />
-            <element signature="method#diagnoseAddress#0;class#FormatFOUREncoder#0" />
-            <element signature="method#standardOpCode#0;class#FormatFOUREncoder#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Instruction/Instruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12/lib/src.zip!/java.base/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="5122" column="25" selection-start-line="5122" selection-start-column="25" selection-end-line="5122" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/FormatTWOEncoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="21" column="72" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="72" />
-          <folding>
-            <element signature="method#diagnoseMnemonic#0;class#FormatTWOEncoder#0" />
-            <element signature="method#diagnoseRegisters#0;class#FormatTWOEncoder#0" />
-            <element signature="method#standardOpCode#0;class#FormatTWOEncoder#0" />
-            <element signature="method#diagnoseTIXR#0;class#FormatTWOEncoder#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionsEncoders/WordEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Instruction/Mnemonic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ListFileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#printListFileHeader#0;class#ListFileManager#0" />
-            <element signature="method#printComment#0;class#ListFileManager#0" />
-            <element signature="method#printLine#0;class#ListFileManager#0" />
-            <element signature="method#printSymbolTable#0;class#ListFileManager#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/FormatIdentifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#identify#0;class#InstructionIdentifier#0" />
-            <element signature="method#PassONEIdentification#0;class#InstructionIdentifier#0" />
-            <element signature="method#diagnoseLabel#0;class#InstructionIdentifier#0" />
-            <element signature="method#diagnoseLength#0;class#InstructionIdentifier#0" />
-            <element signature="method#diagnoseStartEnd#0;class#InstructionIdentifier#0" />
-            <element signature="method#diagnoseBYTE#0;class#InstructionIdentifier#0" />
-            <element signature="method#diagnoseWORD#0;class#InstructionIdentifier#0" />
-            <element signature="method#diagnoseEQU#0;class#InstructionIdentifier#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/OBJFileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#printHeader#0;class#OBJFileManager#0" />
-            <element signature="method#printEnd#0;class#OBJFileManager#0" />
-            <element signature="method#concatAllOpCodes#0;class#OBJFileManager#0" />
-          </folding>
+        <state relative-caret-position="234">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="281">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InstructionIdentifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="908">
+          <caret line="184" lean-forward="true" selection-start-line="184" selection-end-line="184" />
+          <folding>
+            <element signature="method#identify#0;class#InstructionIdentifier#0" />
+            <element signature="method#PassTWOIdentification#0;class#InstructionIdentifier#0" />
+            <element signature="method#PassONEIdentification#0;class#InstructionIdentifier#0" />
+            <element signature="method#diagnoseLabel#0;class#InstructionIdentifier#0" />
+            <element signature="method#diagnoseLength#0;class#InstructionIdentifier#0" />
+            <element signature="method#diagnoseBYTE#0;class#InstructionIdentifier#0" />
+            <element signature="method#diagnoseWORD#0;class#InstructionIdentifier#0" />
+            <element signature="method#literalToHex#0;class#InstructionIdentifier#0" />
           </folding>
         </state>
       </provider>

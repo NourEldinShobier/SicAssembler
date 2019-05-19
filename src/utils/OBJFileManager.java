@@ -21,7 +21,6 @@ public class OBJFileManager {
         printEnd();
     }
 
-
     private static void printHeader() {
         try {
             FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\objFile.txt"));
@@ -31,7 +30,7 @@ public class OBJFileManager {
             stringBuilder.insert(0, "H" + Settings.startLabel.toUpperCase());
             stringBuilder.insert(7, "^" + Settings.standardMemoryLocation(Settings.startOperand));
             stringBuilder.insert(14, "^" + Settings.standardProgramLength());
-            fileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
+            fileWriter.write(stringBuilder.toString().trim().toUpperCase() + System.lineSeparator());
 
             fileWriter.close();
         } catch (IOException e) {
@@ -45,17 +44,15 @@ public class OBJFileManager {
 
         try {
             FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\objFile.txt"), true);
+            fileWriter.write("T" + Settings.standardMemoryLocation(Settings.startOperand));
 
-            if(textRecordLines.size() == 1){
+            for (int i = 0; i < textRecordLines.size(); i++) {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.setLength(100);
 
-                stringBuilder.insert(0, "T" + Settings.standardMemoryLocation(Settings.startOperand));
-                stringBuilder.insert(7, "^" + hexLength(textRecordLines.get(0)));
+                stringBuilder.insert(7, "^" + hexLength(textRecordLines.get(i)));
+                stringBuilder.insert(10, "^" + textRecordLines.get(i).toUpperCase());
                 fileWriter.write(stringBuilder.toString().trim() + System.lineSeparator());
-            }
-            else {
-                // multiple lines
             }
 
             fileWriter.close();
@@ -93,12 +90,12 @@ public class OBJFileManager {
         stringBuilder.setLength(60);
 
         for (String opCode : opCodes) {
-            String line = stringBuilder.toString();
+            String line = stringBuilder.toString().trim();
 
             if (line.length() < 60 && (line.length() + opCode.length()) < 60) {
                 stringBuilder.append(opCode);
             } else {
-                textRecordLines.add(stringBuilder.toString());
+                textRecordLines.add(stringBuilder.toString().trim());
 
                 stringBuilder = new StringBuilder();
                 stringBuilder.setLength(60);
@@ -107,14 +104,14 @@ public class OBJFileManager {
             }
         }
 
-        textRecordLines.add(stringBuilder.toString());
+        textRecordLines.add(stringBuilder.toString().trim());
     }
 
     private static String hexLength(String line){
         String hexLength = Integer.toHexString(line.length() / 2);
 
         StringBuilder stringBuilder = new StringBuilder(hexLength);
-        while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
+        while (stringBuilder.length() < 2) stringBuilder.insert(0, "0");
 
         return stringBuilder.toString().toUpperCase();
     }
