@@ -188,4 +188,14 @@ public abstract class InstructionIdentifier {
         LookupTables.symbolTable.put(instruction.segments[0], memoryLocation);
 
     }
+    private static void diagnoseLiteral(Literal literal){
+
+        String duplicate = "=X'";
+        Literal.literalToHex();
+        duplicate = duplicate + (Literal.getHexValue());
+        duplicate = duplicate +"'";
+            if(!LookupTables.literalTable.contains(literal) && !LookupTables.literalTable.contains(duplicate)){
+                LookupTables.literalTable.add(literal);
+            }
+        }
 }
