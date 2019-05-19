@@ -186,11 +186,14 @@ public abstract class InstructionIdentifier {
 
     private static void diagnoseLiteral(Literal literal){
 
-        String duplicate = Literal.getHexValue();
+        String duplicate = "=X'";
         Literal.literalToHex();
+        duplicate = duplicate + (Literal.getHexValue());
+        duplicate = duplicate +"'";
             if(!LookupTables.literalTable.contains(literal) && !LookupTables.literalTable.contains(duplicate)){
                 LookupTables.literalTable.add(literal);
             }
+            //else push error duplicate literal
         }
 
 }
