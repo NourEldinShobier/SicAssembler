@@ -32,7 +32,9 @@ abstract class FormatIdentifier
                 instruction.segments[1].contains("WORD") ||
                 instruction.segments[1].contains("BYTE") ||
                 instruction.segments[1].contains("ORG") ||
-                instruction.segments[1].contains("EQU"));
+                instruction.segments[1].contains("EQU") ||
+                instruction.segments[1].contains("LTORG"));
+
     }
 
     private static Instruction diagnoseFormat(Instruction instruction)

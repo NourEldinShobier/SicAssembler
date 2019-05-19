@@ -80,7 +80,8 @@ public class OBJFileManager {
         for (Instruction instruction : instructions) {
             boolean expression = instruction.mnemonic.format == MnemonicFormat.TWO ||
                     instruction.mnemonic.format == MnemonicFormat.FOUR ||
-                    (instruction.isDirective && instruction.segments[1].equals("WORD"));
+                    (instruction.isDirective && instruction.segments[1].equals("WORD") ||
+                    (instruction.isDirective && instruction.segments[1].equals("BYTE")));
 
             if (expression) opCodes.add(instruction.opCode);
         }
