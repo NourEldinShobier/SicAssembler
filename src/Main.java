@@ -1,7 +1,9 @@
 import core.FileManager;
+import core.LookupTables;
 import core.Segmentifier;
 import core.validators.ErrorController;
 import core.validators.SegmentsValidator;
+import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.InstructionIdentifier;
 import utils.InstructionsEncoders.FormatTHREEEncoder;
@@ -9,6 +11,7 @@ import utils.ListFileManager;
 import utils.OBJFileManager;
 import utils.errors.ErrorRecord;
 
+import java.beans.Expression;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,8 +72,8 @@ public class Main /*extends Application*/ {
             instructions.set(i, temp);
         }
 
+        ListFileManager.printLiterls();
         ListFileManager.printSymbolTable();
         OBJFileManager.generateOBJFile(instructions);
-
     }
 }

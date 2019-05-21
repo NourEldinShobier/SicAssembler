@@ -13,7 +13,7 @@ public class ExpressionEvaluator {
 
     private static String ERROR = null;
 
-    public static String evaluate (String expression, int lineNumber, boolean isFormat4) {
+    public static String evaluate (String expression, int lineNumber) {
 
         /** debug */
         //LookupTables.setSymbolTable();
@@ -53,12 +53,13 @@ public class ExpressionEvaluator {
         }
         //System.out.println(result);
 
+        int maxLength = 6;
         String res = Integer.toBinaryString((int)result);
-        if (res.length() > (isFormat4 ? 20 : 12))
-            res = res.substring(res.length() - (isFormat4 ? 20 : 12));
+        if (res.length() > maxLength*4)
+            res = res.substring(res.length() - maxLength*4);
 
-        //return Integer.toHexString(Integer.parseInt(res,2));
-        return res;
+        return Integer.toHexString(Integer.parseInt(res,2));
+        //return res;
     }
 
     public static boolean validateDec(String str) {

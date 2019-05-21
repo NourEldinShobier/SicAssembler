@@ -22,7 +22,7 @@ public class InstructionSet {
             new InstructionFormat("stch", "54", false, true, true, false, false),
             new InstructionFormat("stf", "80", false, true, true, false, false),
             new InstructionFormat("stl", "14", false, true, true, false, false),
-            new InstructionFormat("sts", "7c", false, true, true, false, false),
+            new InstructionFormat("sts", "7c", false, true, true, true, false),
             new InstructionFormat("stt", "84", false, true, true, false, false),
             new InstructionFormat("stx", "10", false, true, true, false, false),
 

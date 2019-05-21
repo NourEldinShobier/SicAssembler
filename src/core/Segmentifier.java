@@ -38,7 +38,7 @@ public abstract class Segmentifier
         ArrayList<String> stage4 = new ArrayList<String>();
 
         String regex_COMMENT = "(?=(\\.)(.*))";
-        String regex_Literals = "(?=(=C'(.*)')|(=X'(.*)'))";
+        String regex_Literals = "(?=(=C'(.*)')|(=X'(.*)')|(=W'(.*)'))";
         String regex_CHAR$HEX = "(?=(C'(.*)')|(X'(.*)'))";
         String regex_Spaces = "\\s+";
 

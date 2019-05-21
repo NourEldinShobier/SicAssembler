@@ -1,5 +1,6 @@
 package utils;
 
+import core.Literal;
 import core.LookupTables;
 import core.Settings;
 import utils.Instruction.Instruction;
@@ -7,7 +8,7 @@ import utils.Instruction.MnemonicFormat;
 import utils.InstructionsEncoders.*;
 
 public abstract class InstructionIdentifier {
-    private static int PC = -1;
+    public static int PC = -1;
     public static int PASS = 1;
 
     public static Instruction identify(Instruction instruction) {
@@ -32,8 +33,8 @@ public abstract class InstructionIdentifier {
             if (instruction.mnemonic.format == MnemonicFormat.TWO)
                 return FormatTWOEncoder.encode(instruction);
 
-            /*else if (instruction.mnemonic.format == MnemonicFormat.THREE)
-                instruction = FormatTHREEEncoder.encode(instruction);*/
+            else if (instruction.mnemonic.format == MnemonicFormat.THREE)
+                return FormatTHREEEncoder.encode(instruction);
 
             else if (instruction.mnemonic.format == MnemonicFormat.FOUR)
                 return FormatFOUREncoder.encode(instruction);
@@ -178,8 +179,18 @@ public abstract class InstructionIdentifier {
             return;
         }
 
-        String memoryLocation = LookupTables.symbolTable.get(instruction.segments[2]);
-        LookupTables.symbolTable.put(instruction.segments[0], memoryLocation);
+        ExpressionEvaluator el = new ExpressionEvaluator();
+        LookupTables.symbolTable.put(instruction.segments[0], el.evaluate(instruction.segments[2], 0));
+    }
 
+    public static void diagnoseLiteral(Literal literal){
+        String duplicate = "=X'";
+        System.out.println(literal.getValue());
+        Literal lit = new Literal(literal.getValue(), literal.getAdd());
+        Literal.literalToHex();
+        duplicate = duplicate + (Literal.getHexValue());
+        duplicate = duplicate+"'";
+        if(!LookupTables.literalTable.contains(literal) && !LookupTables.literalTable.contains(duplicate))
+            LookupTables.literalTable.add(literal);
     }
 }

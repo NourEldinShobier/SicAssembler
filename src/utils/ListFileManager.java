@@ -1,5 +1,6 @@
 package utils;
 
+import core.Literal;
 import core.LookupTables;
 import core.Settings;
 import utils.Instruction.Instruction;
@@ -35,6 +36,7 @@ public abstract class ListFileManager {
             e.printStackTrace();
         }
     }
+
     public static void printLine(Instruction instruction) {
         try {
             FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\listFile.txt"), true);
@@ -49,6 +51,7 @@ public abstract class ListFileManager {
             e.printStackTrace();
         }
     }
+
     public static void printError(String error) {
         try {
             FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\listFile.txt"), true);
@@ -96,6 +99,35 @@ public abstract class ListFileManager {
         try {
             fileWriter.write(System.lineSeparator());
             fileWriter.write("-------------------------------------------------------------------------------" + System.lineSeparator());
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void printLiterls() {
+
+        String literalsStartAddress = Settings.ltorg.equals("") ?
+                Integer.toHexString(InstructionIdentifier.PC) :
+                Settings.ltorg;
+
+        int intStartAddress = Integer.parseInt(literalsStartAddress, 16);
+
+
+        try {
+            FileWriter fileWriter = new FileWriter(new File("C:\\SICAssembler\\listFile.txt"), true);
+
+            for (Literal literal : LookupTables.literalTable) {
+                Literal.literalToHex();
+                String value = Literal.getHexValue();
+
+                fileWriter.write(System.lineSeparator());
+                fileWriter.write(Settings.standardMemoryLocation(Integer.toHexString(intStartAddress)) +
+                        "   " + value + System.lineSeparator());
+            }
+
+
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

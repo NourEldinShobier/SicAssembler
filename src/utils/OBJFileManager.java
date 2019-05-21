@@ -80,12 +80,14 @@ public class OBJFileManager {
         for (Instruction instruction : instructions) {
             boolean expression = instruction.mnemonic.format == MnemonicFormat.TWO ||
                     instruction.mnemonic.format == MnemonicFormat.FOUR ||
+                    instruction.mnemonic.format == MnemonicFormat.THREE ||
                     (instruction.isDirective && instruction.segments[1].equals("WORD") ||
                     (instruction.isDirective && instruction.segments[1].equals("BYTE")));
 
             if (expression) opCodes.add(instruction.opCode);
         }
     }
+
     private static void concatAllOpCodes() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.setLength(60);

@@ -1,10 +1,10 @@
 package core;
 
 public class Literal {
-    private static String hexValue = "";
-    private static String MemoryValue = "";
+    public static String hexValue = "";
+    public static String MemoryValue = "";
     public static String literal ="";
-    private static int bytes;
+    public static int bytes;
 
     public Literal(String value, String address) {
         Literal.setMemoryValue(address);
@@ -19,6 +19,10 @@ public class Literal {
     public static String getLiteral() {
         return literal;
     }
+
+    public  static  String getValue (){return  literal;}
+    public  static  String getAdd (){return  MemoryValue;}
+
 
     public static void setMemoryValue(String memoryValue) {
         MemoryValue = memoryValue;
@@ -67,7 +71,47 @@ public class Literal {
             hexValue = builder.toString();
             return;
         }
+        if(literal.length() >= 2)
+            hexValue = (literal.substring(3, literal.length()-1));
+        else
+            hexValue = literal;    }
 
+    public static void literalToHex (String literal){
+        String hexaLiteral ="";
+        String zeroes = "000000";
+        StringBuilder builder = new StringBuilder();
+
+        if(literal.startsWith("=c") || literal.startsWith("=C")) {
+            literal = literal.substring(3, literal.length()-1);
+            int len = literal.length();
+            if(len < 3){
+                builder.append(zeroes.substring(0, 6 - (2 * len)));
+            }
+            char[] characters = literal.toCharArray();
+            for (char c : characters) {
+                int i = (int) c;
+                builder.append(Integer.toHexString(i).toUpperCase());
+            }
+            hexValue.concat(builder.toString());
+            System.out.println(builder.toString());
+            return;
+        }
+
+        else if(literal.startsWith("=w") || literal.startsWith("=W")){
+            literal = literal.substring(3,literal.length()-1);
+            int decimal =  (Integer.parseInt(literal));
+            hexaLiteral = Integer.toHexString(decimal);
+            int len = (hexaLiteral).length();
+            if(len < 6){
+                builder.append(zeroes.substring(0, 6 - len));
+            }
+            builder.append(hexaLiteral);
+            hexValue = builder.toString();
+            return;
+        }
+        if(literal.length() >= 2)
         hexValue = (literal.substring(3, literal.length()-1));
+        else
+            hexValue = literal;
     }
 }

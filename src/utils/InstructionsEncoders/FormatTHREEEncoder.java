@@ -1,34 +1,68 @@
 package utils.InstructionsEncoders;
 
 import core.InstructionSet;
+import core.Literal;
 import core.LookupTables;
+import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.Instruction.Mnemonic;
 import utils.Instruction.MnemonicFormat;
+import utils.InstructionIdentifier;
 
 public class FormatTHREEEncoder {
     public static Instruction encode(Instruction instruction) {
         if (instruction.segments[1].equals("J") && instruction.segments[2].equals("*"))
             return diagnoseJStar(instruction);
 
-        else {
-            instruction.mnemonic = diagnoseMnemonic(instruction.segments[1]);
+        instruction.mnemonic = diagnoseMnemonic(instruction.segments[1]);
 
-            String nixbpe = diagnoseNIXBPE(instruction.segments[2]);
-            String ta = diagnoseTA(instruction.segments[2]);
+        String nixbpe = diagnoseNIXBPE(instruction.segments[2]);
+        String disp = "";
 
-            int disp = Integer.parseInt(ta) - (Integer.parseInt(instruction.memoryLocation, 16));
+        if (instruction.segments[2].startsWith("=")){
+            Literal literal = new Literal(instruction.segments[2], instruction.memoryLocation);
+            Literal.literalToHex(instruction.segments[2]);
+            String add = Literal.getHexValue();
+            int addInt = Integer.parseInt(add,16);
+            add = Integer.toBinaryString(addInt);
+            disp = add;
+            InstructionIdentifier.diagnoseLiteral(literal);
+        }else {
+            if ((nixbpe.charAt(0) == '0' && nixbpe.charAt(1) == '1' && nixbpe.charAt(4) == '0')
+                    || (nixbpe.charAt(0) == '1' && nixbpe.charAt(1) == '0' && nixbpe.charAt(4) == '0')) {
 
-            String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + standardDisp(Integer.toString(disp));
-            String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
+                String operand = instruction.segments[2].substring(1);
+                boolean isDecimal = operand.matches("\\d*\\.?\\d+");
 
-            // Standard Opcode
-            StringBuilder stringBuilder = new StringBuilder(opCodeHEX);
-            while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
+                if (isDecimal) disp = Integer.toBinaryString(Integer.parseInt(operand));
+                else {
+                    operand = LookupTables.symbolTable.get(operand);
 
-            instruction.opCode = stringBuilder.toString().toUpperCase();
+                    int decimalAddress = Integer.parseInt(operand, 16);
+                    disp = Integer.toBinaryString(decimalAddress);
+                }
+            } else if (nixbpe.charAt(0) == '1' && nixbpe.charAt(1) == '1' && nixbpe.charAt(4) == '0') {
+                String operand = instruction.segments[2];
+                boolean isDecimal = operand.matches("\\d*\\.?\\d+");
 
+                if (isDecimal) disp = Integer.toBinaryString(Integer.parseInt(operand));
+                else {
+                    operand = LookupTables.symbolTable.get(operand);
+
+                    int decimalAddress = Integer.parseInt(operand, 16);
+                    disp = Integer.toBinaryString(decimalAddress);
+                }
+            }
         }
+
+        String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + standardDisplacement(disp);
+        String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
+
+        // Standard Opcode
+        StringBuilder stringBuilder = new StringBuilder(opCodeHEX);
+        while (stringBuilder.length() < 6) stringBuilder.insert(0, "0");
+
+        instruction.opCode = stringBuilder.toString().toUpperCase();
         return instruction;
     }
 
@@ -50,61 +84,53 @@ public class FormatTHREEEncoder {
     private static String diagnoseNIXBPE(String operand) {
         char[] nixbpe = {' ', ' ', ' ', ' ', ' ', ' '};
 
-        // e
-        nixbpe[5] = '0';
-        // p
-        nixbpe[4] = '1';
-        // b
-        nixbpe[3] = '0';
-        // x
-        if (operand.endsWith(",X")) nixbpe[2] = '1';
-        else nixbpe[2] = '0';
-        // n i
-        if (!operand.startsWith("@") && !operand.startsWith("#")) {
-            nixbpe[0] = '1';
+        if (operand.startsWith("=")) {
+            nixbpe[0] = '0';
             nixbpe[1] = '1';
+            nixbpe[2] = '0';
+            nixbpe[3] = '0';
+            nixbpe[4] = '0';
+            nixbpe[5] = '0';
         } else {
-            if (operand.startsWith("@")) {
+            // e
+            nixbpe[5] = '0';
+            // b
+            nixbpe[3] = '0';
+            // x
+            if (operand.endsWith(",X")) nixbpe[2] = '1';
+            else nixbpe[2] = '0';
+            // n i
+            if (!operand.startsWith("@") && !operand.startsWith("#")) {
                 nixbpe[0] = '1';
-                nixbpe[1] = '0';
-            } else { // startswith #
-                nixbpe[0] = '0';
                 nixbpe[1] = '1';
-
-                if ((Boolean) isNumber(operand.substring(1))) {
-                    nixbpe[4] = '0';
+            } else {
+                if (operand.startsWith("@")) {
+                    nixbpe[0] = '1';
+                    nixbpe[1] = '0';
+                } else {
+                    nixbpe[0] = '0';
+                    nixbpe[1] = '1';
                 }
+            }
+
+            // p
+            boolean startWithHashORat = operand.startsWith("#") || operand.startsWith("@");
+
+            if (startWithHashORat) operand = operand.substring(1);
+            boolean isDecimal = operand.matches("\\d*\\.?\\d+");
+
+            if (isDecimal && startWithHashORat) nixbpe[4] = '0';
+            else if (isDecimal && !startWithHashORat) nixbpe[4] = '0';
+            else if (!isDecimal && startWithHashORat) nixbpe[4] = '0';
+            else {
+                nixbpe[4] = '0';
             }
         }
 
+
+
+
         return String.valueOf(nixbpe);
-    }
-
-    private static boolean isNumber(String s) {
-
-        return s != null && s.matches("[-+]?\\d*\\.?\\d+");
-    }
-
-    private static String diagnoseTA(String operand) {
-
-        if (operand.startsWith("@") || operand.startsWith("#"))
-            operand = operand.substring(1);
-
-        return getAddressFromNum_LABEL(operand);
-    }
-
-    private static String getAddressFromNum_LABEL(String operand) {
-
-        boolean isDecimal = operand.matches("\\d*\\.?\\d+");
-
-        if (isDecimal) {
-            int decimalAddress = Integer.parseInt(operand, 10);
-            return Integer.toString(decimalAddress);
-        } else {
-            operand = LookupTables.symbolTable.get(operand);
-            int decimalAddress = Integer.parseInt(operand, 16);
-            return Integer.toString(decimalAddress);
-        }
     }
 
     private static String standardOpCode(String opCode) {
@@ -127,8 +153,8 @@ public class FormatTHREEEncoder {
         return totalBinary.substring(0, 6);
     }
 
-    private static String standardDisp(String Disp) {
-        StringBuilder stringBuilder = new StringBuilder(Disp);
+    private static String standardDisplacement(String disp) {
+        StringBuilder stringBuilder = new StringBuilder(disp);
         while (stringBuilder.length() < 12) stringBuilder.insert(0, "0");
 
         return stringBuilder.toString();
@@ -140,21 +166,21 @@ public class FormatTHREEEncoder {
         instruction.mnemonic.opCode = "3C";
         instruction.mnemonic.name = "J";
 
-        int disp = Integer.parseInt(instruction.memoryLocation, 16) - 3;
-        String binDisp = standardDisp(Integer.toBinaryString(disp));
+        String memLocationHex = instruction.memoryLocation;
+        String memLocationBin = Integer.toBinaryString(Integer.parseInt(memLocationHex, 16));
 
-        // standard displacement
-        StringBuilder stringBuilder = new StringBuilder(binDisp);
-        while (stringBuilder.length() < 12) stringBuilder.insert(0, "0");
+        if (memLocationBin.length() > 12) instruction.opCode = "3F2FFD";
+        else {
 
-        String opCodeBinary = "001111" + "110010" + stringBuilder.toString();
-        String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
+            String first3Digits = "3F0";
+            String second3Digits = instruction.memoryLocation.toUpperCase();
 
-        // standard opCode
-        StringBuilder stringBuilder1 = new StringBuilder(opCodeHEX);
-        while (stringBuilder1.length() < 6) stringBuilder1.insert(0, "0");
+            StringBuilder stringBuilder = new StringBuilder(second3Digits);
+            while (stringBuilder.length() < 3) stringBuilder.insert(0, "0");
 
-        instruction.opCode = stringBuilder1.toString().toUpperCase();
+            instruction.opCode = first3Digits + stringBuilder.toString();
+        }
+
         return instruction;
     }
 }

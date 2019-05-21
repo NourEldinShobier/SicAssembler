@@ -1,19 +1,21 @@
 package utils.InstructionsEncoders;
 
 import core.InstructionSet;
+import core.Literal;
 import core.LookupTables;
 import core.Settings;
 import utils.ExpressionEvaluator;
 import utils.Instruction.Instruction;
 import utils.Instruction.Mnemonic;
 import utils.Instruction.MnemonicFormat;
+import utils.InstructionIdentifier;
 
 public class FormatFOUREncoder {
     public static Instruction encode(Instruction instruction) {
         instruction.mnemonic = diagnoseMnemonic(instruction.segments[1]);
 
         String nixbpe = diagnoseNIXBPE(instruction.segments[2]);
-        String operand = diagnoseOperandType(instruction.segments[2], instruction.lineNumber);
+        String operand = diagnoseOperandType(instruction.segments[2], instruction.memoryLocation);
 
         String opCodeBinary = standardOpCode(instruction.mnemonic.opCode) + nixbpe + operand;
         String opCodeHEX = Integer.toString(Integer.parseInt(opCodeBinary, 2), 16);
@@ -80,16 +82,16 @@ public class FormatFOUREncoder {
         return getBinAddressFromNum_LABEL(operand);
     }
 
-    private static String diagnoseOperandType(String operand, int lineNumber) {
+    private static String diagnoseOperandType(String operand, String address) {
         boolean isLiteral = operand.startsWith("=");
-        boolean isExpression = operand.contains("+")
-                || operand.contains("-")
-                || operand.contains("/")
-                || operand.contains("*");
-
-        if (isExpression) operand = ExpressionEvaluator.evaluate(operand, lineNumber, true);
-        else if (isLiteral) {
-            // Call Literal Evaluator
+        if (isLiteral) {
+            Literal literal = new Literal(operand, address);
+            Literal.literalToHex();
+            String add = Literal.getHexValue();
+            int addInt = Integer.parseInt(add,16);
+            add = Integer.toBinaryString(addInt);
+            operand = standardAddress(add);
+            InstructionIdentifier.diagnoseLiteral(literal);
         } else operand = standardAddress(diagnoseAddress(operand));
 
         return operand;
